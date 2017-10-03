@@ -2,6 +2,7 @@ extends Node
 
 const ControlPointNode = preload('ControlPoint.tscn')
 const ControlPoint = preload('ControlPoint.gd')
+const BezierColliderNode = preload('BezierCollider.tscn')
 
 var curve
 var control_points = []
@@ -16,6 +17,8 @@ export var draw_polygon = true
 export var polygon_thickness = 2.0
 export var polygon_color = Color(0.3, 1, 0.6)
 	
+var collider
+
 func init_with_points(n):
 	assert(n > 1 && !created)
 	curve = Curve2D.new()
@@ -41,6 +44,9 @@ func init_with_points(n):
 		control_points.append(cp)
 		cp.connect("position_changed", self, "on_position_change", [3 * i + 2])
 		add_child(cp)
+	collider = BezierColliderNode.instance()
+	collider.set_points(curve.tesselate())
+	add_child(collider)
 	created = true
 	
 func _draw():

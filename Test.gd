@@ -4,5 +4,5 @@ const CurveNode = preload('Curve.tscn')
 
 func _ready():
 	var curve = CurveNode.instance()
-	curve.init_with_points(3)
+	curve.init_with_points(2)
 	add_child(curve)

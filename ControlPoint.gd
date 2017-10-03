@@ -1,7 +1,8 @@
 extends Node2D
 
-signal position_changed
+const DragManager = preload('DragManager.gd')
 
+signal position_changed
 
 enum PointType {
 	KNOT,
@@ -12,6 +13,7 @@ enum PointType {
 var radius = 10
 var dragging = false
 var type = PointType.KNOT
+onready var drag_manager = DragManager.get_instance(self)
 
 func _ready():
 	set_process_input(true)
@@ -27,11 +29,13 @@ func _input(event):
 		return
 	if !event.pressed:
 		dragging = false
+		drag_manager.remove_dragged(self)
 		return
 	var mpos = get_global_mouse_pos()
 	var pos = get_global_pos()
 	if (pos - mpos).length_squared() <= radius * radius:
-		dragging = true
+		drag_manager.add_dragged(self)
+		dragging = drag_manager.check_dragged(self)
 
 func _draw():
 	if type == PointType.KNOT:
