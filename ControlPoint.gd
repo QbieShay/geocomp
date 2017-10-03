@@ -17,9 +17,9 @@ onready var drag_manager = DragManager.get_instance(self)
 
 func _ready():
 	set_process_input(true)
-	set_process(true)
+	set_fixed_process(true)
 	
-func _process(delta):
+func _fixed_process(delta):
 	if dragging:
 		var mpos = get_global_mouse_pos()
 		set_global_pos(mpos)

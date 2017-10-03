@@ -92,3 +92,4 @@ func on_position_change(idx):
 		var knot = control_points[pt_idx * 3]
 		curve.set_point_out(pt_idx, pt.get_global_pos() - knot.get_pos())
 	update()
+	collider.set_points(curve.tesselate())
