@@ -5,7 +5,7 @@ const CharacterNode = preload('Character.tscn')
 
 func _ready():
 	var curve = CurveNode.instance()
-	curve.init_with_points(2)
+	curve.init_with_points(5)
 	add_child(curve)
 	set_process_input(true)
 	
