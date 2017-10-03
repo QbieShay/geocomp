@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://BezierTest.gd" type="Script" id=1]
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": Vector2Array(  )
+}
+
+[node name="Path2D" type="Path2D"]
+
+curve = SubResource( 1 )
+script/script = ExtResource( 1 )
+
+
