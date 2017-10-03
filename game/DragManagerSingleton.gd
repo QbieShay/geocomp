@@ -1,6 +1,6 @@
 extends Node
 
-const ControlPoint = preload('ControlPoint.gd')
+const ControlPoint = preload('curve/ControlPoint.gd')
 
 var dragged = []
 

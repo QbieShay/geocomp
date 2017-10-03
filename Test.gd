@@ -1,7 +1,7 @@
 extends Node2D
 
-const CurveNode = preload('Curve.tscn')
-const CharacterNode = preload('Character.tscn')
+const CurveNode = preload('game/curve/Curve.tscn')
+const CharacterNode = preload('game/Character.tscn')
 
 func _ready():
 	var curve = CurveNode.instance()

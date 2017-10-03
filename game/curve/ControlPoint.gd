@@ -1,6 +1,6 @@
 extends Node2D
 
-const DragManager = preload('DragManager.gd')
+const DragManager = preload('../DragManager.gd')
 
 signal position_changed
 
