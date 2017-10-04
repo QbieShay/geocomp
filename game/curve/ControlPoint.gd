@@ -37,14 +37,15 @@ func _input(event):
 		drag_manager.add_dragged(self)
 		dragging = drag_manager.check_dragged(self)
 
-func _draw():
-	if type == PointType.KNOT:
-		draw_circle(Vector2(), radius, Color(1, 0.6, 0.2))
-	elif type == PointType.IN:
-		draw_circle(Vector2(), radius, Color(1, 0.5, 1, 1))
-	elif type == PointType.OUT:
-		draw_circle(Vector2(), radius, Color(0.5, 1, 1, 1))
+#func _draw():
+#	if type == PointType.KNOT:
+#		draw_circle(Vector2(), radius, Color(1, 0.6, 0.2))
+#	elif type == PointType.IN:
+#		draw_circle(Vector2(), radius, Color(1, 0.5, 1, 1))
+#	elif type == PointType.OUT:
+#		draw_circle(Vector2(), radius, Color(0.5, 1, 1, 1))
 	
 func set_global_pos(p):
 	.set_global_pos(p)
-	emit_signal("position_changed")
+	if dragging:
+		emit_signal("position_changed")
