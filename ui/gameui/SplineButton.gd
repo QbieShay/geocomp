@@ -1,30 +1,13 @@
 extends TextureButton
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-var normals = []
-var pressed
-var del
-
-var loaded = false
+var type = 0
+var cancel_texture 
 
 
-
-func _loadImgs():
-	normals = []
-	for i in range (3):
-		normals.append(ImageTexture.new().load("res://ui/gameui/img/Spline" + str(i+1) + "_Active.png"))
-	loaded = true
-
-func set_spline_type(type_index):
-	if(not loaded):
-		_loadImgs()
-	if (type_index == 1):
-		set_normal_texture(normals[0])
-	if (type_index == 2):
-		set_normal_texture(normals[1])
-	if (type_index == 3):
-		set_normal_texture(normals[2])
+func set_spline_type(type_index, normal, pressed, used):
+	type = type_index
+	set_normal_texture(normal)
+	#set_pressed_texture(pressed)
+	cancel_texture = used
 	pass
 
