@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=1]
 
-[ext_resource path="res://Test.gd" type="Script" id=1]
+[ext_resource path="res://game/Game.gd" type="Script" id=1]
 [ext_resource path="res://ui/GameUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/targets/Target.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/targets/TargetsManager.gd" type="Script" id=4]
@@ -42,7 +42,13 @@ transform/scale = Vector2( 1.8309, 1.8309 )
 [node name="Area2D 2" parent="." instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 356.277, 448.164 )
-transform/rot = -23.0333
+transform/rot = -26.2304
+transform/scale = Vector2( 2.60045, 2.60045 )
+
+[node name="Area2D3" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 746.609, 194.558 )
+transform/rot = 8.53365
 transform/scale = Vector2( 2.60045, 2.60045 )
 
 

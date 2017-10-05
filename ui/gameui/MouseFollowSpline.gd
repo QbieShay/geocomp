@@ -33,8 +33,8 @@ func _input(event):
 	if(event.type == InputEvent.MOUSE_BUTTON and
 		event.pressed):
 		if(segment != null):
-			segment.add_curve(type+1)
-			button.set_segment(segment)
+			if segment.add_curve(type+1):
+				button.set_segment(segment)
 			die()
 		else:
 			button.set_pressed(false)

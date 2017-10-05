@@ -15,7 +15,6 @@ func set_spline_type(type_index, normal, pressed, used):
 
 
 func set_segment(segment):
-	print("segment set in button")
 	set_pressed(false)
 	set_normal_texture(cancel_texture)
 	self.segment = segment
@@ -31,13 +30,14 @@ func pressed_callback():
 
 
 func mouse_enter():
-	print("hovering")
 	if(segment != null):
 		segment.curve.glowing = true
+		segment.glowing = true
 	pass # replace with function body
 
 
 func mouse_exit():
 	if(segment != null):
 		segment.curve.glowing = false
+		segment.glowing = false
 	pass # replace with function body

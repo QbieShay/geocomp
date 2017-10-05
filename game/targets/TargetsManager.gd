@@ -2,30 +2,21 @@ extends Node
 
 const Target = preload('Target.gd')
 const FinalTarget = preload('FinalTarget.gd')
+const Utils = preload('res://Utils.gd')
 #const Character = preload('../character/Character.gd')
 
 var targets = []
 
 func _ready():
 	var root = get_node('/root/Node2D')
-	targets = find_all_targets(root)
+	targets = Utils.find_all_targets(Target, root)
 	print('Found ', targets.size(), ' targets')
 	for t in targets:
 		if t extends FinalTarget:
 			t.connect("target_hit", self, "on_final_target_hit")
 		else:
 			t.connect("target_hit", self, "on_target_hit", [t])
-	
-func find_all_targets(root):
-	var found = []
-	for node in root.get_children():
-		if node extends Target:
-			found.append(node)
-		else:
-			var ts = find_all_targets(node)
-			for t in ts:
-				found.append(t)
-	return found
+
 	
 func on_target_hit(distance, target):
 	var score = calc_score(distance)
