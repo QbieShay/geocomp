@@ -29,11 +29,11 @@ func pressed_callback():
 
 func mouse_enter():
 	if(segment != null):
-		segment.glowing = true
+		segment.curve.glowing = true
 	pass # replace with function body
 
 
 func mouse_exit():
 	if(segment != null):
-		segment.glowing = false
+		segment.curve.glowing = false
 	pass # replace with function body
