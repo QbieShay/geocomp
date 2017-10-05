@@ -7,6 +7,7 @@ extends Sprite
 var who_notify
 var who_called
 var segment
+var type
 
 export (Texture) var Spline1Tooltip
 export (Texture) var Spline2Tooltip
@@ -19,6 +20,7 @@ func _ready():
 	pass
 
 func set_current_curve(curve):
+	type = curve
 	if(curve == 1) :
 		set_texture(Spline1Tooltip)
 	elif(curve == 2):
@@ -30,7 +32,9 @@ func _input(event):
 	if(event.type == InputEvent.MOUSE_BUTTON and
 		event.pressed):
 		if(segment != null):
+			segment.add_curve(type+1)
 			who_notify.set_segment(segment)
+			die()
 		else:
 			who_called.set_pressed(false)
 			die()

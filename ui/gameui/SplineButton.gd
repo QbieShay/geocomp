@@ -3,7 +3,7 @@ extends TextureButton
 var type = 0
 var cancel_texture 
 var normal_texture
-var using = false
+var segment = null
 
 func set_spline_type(type_index, normal, pressed, used):
 	type = type_index
@@ -13,9 +13,26 @@ func set_spline_type(type_index, normal, pressed, used):
 	cancel_texture = used
 	pass
 
+
+func set_segment(segment):
+	set_normal_texture(cancel_texture)
+	self.segment = segment
+
 func pressed_callback():
-	if(using == true):
-		#TODO cancel the active spline
+	if(segment != null):
+		segment.delete_curve()
 		set_normal_texture(normal_texture)
 	else:
 		get_parent().position_spline(self, type)
+
+
+func mouse_enter():
+	if(segment != null):
+		segment.glowing = true
+	pass # replace with function body
+
+
+func mouse_exit():
+	if(segment != null):
+		segment.glowing = false
+	pass # replace with function body
