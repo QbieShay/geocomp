@@ -19,4 +19,6 @@ params/resize_mode = 0
 params/stretch_mode = 0
 script/script = ExtResource( 1 )
 
+[connection signal="pressed" from="." to="." method="pressed_callback"]
+
 
