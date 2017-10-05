@@ -8,4 +8,3 @@ func set_points(points):
 		shape.set_a(points[i])
 		shape.set_b(points[i+1])
 		add_shape(shape)
-	pass
