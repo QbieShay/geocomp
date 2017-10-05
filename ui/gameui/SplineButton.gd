@@ -23,6 +23,7 @@ func set_segment(segment):
 func pressed_callback():
 	if(segment != null):
 		segment.del_curve()
+		segment = null
 		set_normal_texture(normal_texture)
 		set_pressed(false)
 	else:
