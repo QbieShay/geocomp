@@ -12,6 +12,7 @@ func _ready():
 	var shape = get_node('CollisionShape2D')
 	size = shape.get_shape().get_extents()
 	connect("area_enter", self, "on_area_enter")
+	connect("area_exit", self, "on_area_exit")
 	set_process(true)
 	
 func _draw():
@@ -35,11 +36,12 @@ func del_curve():
 func on_area_enter(area):
 #	if !area extends SplineTooltipArea:
 #		return
-	area.set_segment(self)
+	print('Enter')
+	area.segment = self
 	highlighted = true
 	
 func on_area_exit(area):
 #	if !area extends SplineTooltipArea:
 #		return
-	area.set_segment(null)
+	area.segment = null
 	highlighted = false

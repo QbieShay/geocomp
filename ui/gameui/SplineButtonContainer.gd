@@ -1,8 +1,5 @@
 extends HBoxContainer
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
 var spline_button = preload("SplineButton.tscn")
 var mouse_follow = preload("MouseFollowSplineTooltip.tscn")
 var normals = []
@@ -49,8 +46,8 @@ func spawn_mouse_tip(caller, type):
 		if(mf != null):
 			mf.die()
 		mf = mouse_follow.instance()
-		mf.set_current_curve(type)
-		mf.who_notify = self
-		mf.who_called = caller
 		add_child(mf)
+		mf.set_current_curve(type)
+		mf.container = self
+		mf.button = caller
 	
