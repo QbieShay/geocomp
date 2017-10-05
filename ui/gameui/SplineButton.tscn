@@ -23,6 +23,10 @@ script/script = ExtResource( 1 )
 
 [connection signal="focus_exit" from="." to="." method="mouse_exit"]
 
+[connection signal="mouse_enter" from="." to="." method="mouse_enter"]
+
+[connection signal="mouse_exit" from="." to="." method="mouse_exit"]
+
 [connection signal="pressed" from="." to="." method="pressed_callback"]
 
 

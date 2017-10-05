@@ -46,7 +46,7 @@ func spawn_mouse_tip(caller, type):
 		if(mf != null):
 			mf.die()
 		mf = mouse_follow.instance()
-		add_child(mf)
+		get_tree().get_root().add_child(mf)
 		mf.set_current_curve(type)
 		mf.container = self
 		mf.button = caller
