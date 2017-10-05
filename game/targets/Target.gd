@@ -10,5 +10,4 @@ func _ready():
 func on_body_enter(body):
 	if !body extends Character:
 		return
-	print("Area entered")
 	emit_signal("target_hit", abs(body.get_global_pos().y - get_global_pos().y))

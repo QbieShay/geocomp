@@ -4,11 +4,6 @@ const ControlPointNode = preload('ControlPoint.tscn')
 const ControlPoint = preload('ControlPoint.gd')
 const BezierColliderNode = preload('BezierCollider.tscn')
 
-var curve
-# control_points stores [knot#0, in#0, out#0, knot#1, in#1, out#1, ...]
-var control_points = []
-var created = false
-
 export var curve_thickness = 20.0
 export var curve_color = Color(0.5, 0.5, 1, 1)
 export var point_color = Color(1, 1, 0.5, 1)
@@ -21,7 +16,31 @@ export var polygon_color = Color(0.3, 1, 0.6)
 export var force_equidirectional = true
 	
 var collider
+var curve
+# control_points stores [knot#0, in#0, out#0, knot#1, in#1, out#1, ...]
+var control_points = []
+var created = false
+var glowing = false
+var alpha = 0.5
+var alpha_grow = true
 
+func _ready():
+	set_process(true)
+	
+func _process(delta):
+	if alpha_grow:
+		alpha += delta * 1.5
+		if alpha >= 1:
+			alpha = 1
+			alpha_grow = false
+	else:
+		alpha -= delta * 1.5
+		if alpha <= 0:
+			alpha = 0
+			alpha_grow = true
+	if glowing:
+		update()
+		
 func init_with_points(n):
 	assert(n > 1 && !created)
 	curve = Curve2D.new()
@@ -62,6 +81,8 @@ func _draw():
 	var start = Vector2()
 	for point in curve.get_baked_points():
 		draw_line(start, point, curve_color, curve_thickness)
+		if glowing:
+			draw_rect(Rect2(Vector2(start) - Vector2(5, 5), Vector2(10, 10)), Color(0.1, 0.9, 0.1, alpha))
 		start = point
 	
 	# Draw the control polygons

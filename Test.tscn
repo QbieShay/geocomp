@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Test.gd" type="Script" id=1]
 [ext_resource path="res://ui/GameUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/targets/Target.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/targets/TargetsManager.gd" type="Script" id=4]
+[ext_resource path="res://game/targets/FinalTarget.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/curve/CurveSupport.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,5 +19,32 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 
 [node name="GameUI" parent="CanvasLayer" instance=ExtResource( 2 )]
+
+visibility/visible = false
+
+[node name="Target" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 537.763, 324.424 )
+transform/scale = Vector2( 1.73509, 1.73509 )
+
+[node name="Target2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 234.631, 161.93 )
+transform/scale = Vector2( 1.85809, 1.79872 )
+
+[node name="TargetsManager" type="Node2D" parent="."]
+
+script/script = ExtResource( 4 )
+
+[node name="Area2D" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 764.369, 444.856 )
+transform/scale = Vector2( 1.8309, 1.8309 )
+
+[node name="Area2D 2" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 356.277, 448.164 )
+transform/rot = -23.0333
+transform/scale = Vector2( 2.60045, 2.60045 )
 
 
