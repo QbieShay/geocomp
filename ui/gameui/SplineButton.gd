@@ -22,6 +22,7 @@ func pressed_callback():
 	if(segment != null):
 		segment.delete_curve()
 		set_normal_texture(normal_texture)
+		set_pressed(false)
 	else:
 		get_parent().position_spline(self, type)
 

@@ -10,10 +10,6 @@ var pressed = []
 var cancels = []
 var mf
 
-func selected_segment(segment):
-	#TODO create spline
-	pass
-
 func _loadImgs():
 	for i in range (3):
 		var img = ImageTexture.new()
