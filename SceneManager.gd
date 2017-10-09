@@ -1,6 +1,9 @@
 extends Node
 
-onready var root = get_node('/root/Root')
+const Utils = preload('Utils.gd')
+
+onready var root = get_node(Utils.name_from_root())
+
 # The scenes we came from (class paths)
 var scene_stack = []
 var cur_main_scene
@@ -9,7 +12,7 @@ var cur_main_scene_class_path
 # Loads the given scene by path, instances it, destroys the
 # current main scene and sets the new loaded one as main.
 func set_main_scene(scene_name, save_in_stack = true):
-	var SceneClass = scene_name
+	var SceneClass = load(scene_name)
 	assert(SceneClass)
 	if cur_main_scene:
 		if save_in_stack:
@@ -17,7 +20,9 @@ func set_main_scene(scene_name, save_in_stack = true):
 		cur_main_scene.queue_free()
 	var scene = SceneClass.instance()
 	cur_main_scene_class_path = scene_name
+	cur_main_scene = scene
 	root.add_child(scene)
+	return scene
 	
 func load_prev_scene():
 	if scene_stack.size() == 0:

@@ -6,6 +6,6 @@ func _ready():
 	add_child(Game.new())
 	
 func load_level(n):
-	var LevelScene = load('Level' + n + '.tscn')
+	var LevelScene = load('res://game/levels/Level' + str(n) + '.tscn')
 	assert(LevelScene)
 	add_child(LevelScene.instance())

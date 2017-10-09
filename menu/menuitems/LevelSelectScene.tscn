@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=1]
 
-[ext_resource path="res://levelselection/LevelSelectScene.gd" type="Script" id=1]
+[ext_resource path="res://menu/menuitems/LevelSelectScene.gd" type="Script" id=1]
 [ext_resource path="res://ui/YIKES!__.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://ui/BackButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ui/BackBtn.png" type="Texture" id=4]
-[ext_resource path="res://levelselection/LevelPreview.gd" type="Script" id=5]
+[ext_resource path="res://menu/menuitems/Preview.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -51,7 +51,7 @@ max_lines_visible = -1
 
 [node name="BackButton" parent="." instance=ExtResource( 3 )]
 
-[node name="LevelPreview" type="TextureFrame" parent="."]
+[node name="Preview" type="TextureFrame" parent="."]
 
 anchor/right = 1
 anchor/bottom = 1
@@ -68,7 +68,7 @@ expand = true
 stretch_mode = 6
 script/script = ExtResource( 5 )
 
-[node name="LevelButtonsContainer" type="HBoxContainer" parent="."]
+[node name="ButtonsContainer" type="HBoxContainer" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = false
