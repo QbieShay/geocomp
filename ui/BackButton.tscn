@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=3 format=1]
 
 [ext_resource path="res://ui/BackBtn.png" type="Texture" id=1]
+[ext_resource path="res://ui/BackButton.gd" type="Script" id=2]
 
 [node name="BackButton" type="TextureButton"]
 
@@ -18,5 +19,8 @@ shortcut = null
 textures/normal = ExtResource( 1 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 2 )
+
+[connection signal="pressed" from="." to="." method="_click"]
 
 
