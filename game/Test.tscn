@@ -54,4 +54,9 @@ transform/scale = Vector2( 2.60045, 2.60045 )
 
 [node name="Background" parent="." instance=ExtResource( 7 )]
 
+[node name="CurveSupport" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 584.464, 143 )
+transform/scale = Vector2( 6.79574, 1 )
+
 

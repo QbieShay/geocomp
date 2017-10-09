@@ -97,24 +97,28 @@ func _draw():
 	if !draw_polygon:
 		return
 	var p_out = null
-	var invscale = 1 / max(get_global_scale().x, get_global_scale().y)
-	for i in range(0, curve.get_point_count()):
+	for i in range(curve.get_point_count()):
 		var pos = curve.get_point_pos(i)
 		var p_in = pos + curve.get_point_in(i)
 		if connect_in_out and p_out != null:
 			draw_line(p_out, p_in, polygon_color, polygon_thickness)
 		p_out = pos + curve.get_point_out(i)
 		
-		draw_circle(pos, 5 * invscale, point_color)
+		add_circle(pos, 5, point_color)
 		if i > 0:
-			draw_circle(p_in, 5 * invscale, point_in_color)
+			add_circle(p_in, 5, point_in_color)
 			draw_line(pos, p_in, polygon_color, polygon_thickness)
 
 		if i < curve.get_point_count() - 1:
-			draw_circle(p_out, 5 * invscale, point_out_color)
+			add_circle(p_out, 5 , point_out_color)
 			draw_line(pos, p_out, polygon_color, polygon_thickness)
 
-
+func add_circle(pos, radius, color):
+	var scale = get_global_scale()
+	draw_set_transform(Vector2(), 0, Vector2(1 / scale.x, 1 / scale.y))
+	draw_circle(pos * scale, radius, color)
+	draw_set_transform(Vector2(), 0, Vector2(1, 1))
+	
 func on_position_change(idx):
 	var pt = control_points[idx]
 	var pt_idx = int(idx / 3)
