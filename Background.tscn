@@ -16,7 +16,7 @@ scale = Vector2( 1, 1 )
 transform/pos = Vector2( 176.424, 109.952 )
 transform/scale = Vector2( 103.402, 68.7573 )
 texture = ExtResource( 1 )
-modulate = Color( 0.334183, 0.39801, 0.472656, 1 )
+modulate = Color( 0.318298, 0.439862, 0.582031, 1 )
 
 [node name="Particles2D" type="Particles2D" parent="CanvasLayer"]
 

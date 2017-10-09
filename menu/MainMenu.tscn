@@ -52,6 +52,7 @@ margin/bottom = 156.0
 textures/normal = ExtResource( 2 )
 textures/pressed = ExtResource( 3 )
 textures/hover = ExtResource( 4 )
+scene_to_load = "res://menu/menuitems/LevelSelectScene.tscn"
 
 [node name="ManualButton" parent="Container/VBoxContainer" instance=ExtResource( 1 )]
 
@@ -64,6 +65,7 @@ margin/bottom = 316.0
 textures/normal = ExtResource( 5 )
 textures/pressed = ExtResource( 6 )
 textures/hover = ExtResource( 7 )
+scene_to_load = "res://menu/menuitems/ManualScene.tscn"
 
 [node name="TheoryButton" parent="Container/VBoxContainer" instance=ExtResource( 1 )]
 

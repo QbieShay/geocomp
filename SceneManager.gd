@@ -19,8 +19,8 @@ func set_main_scene(scene_name, save_in_stack = true):
 			scene_stack.append(cur_main_scene_class_path)
 		cur_main_scene.queue_free()
 	var scene = SceneClass.instance()
-	cur_main_scene_class_path = scene_name
 	cur_main_scene = scene
+	cur_main_scene_class_path = scene_name
 	root.add_child(scene)
 	return scene
 	

@@ -1,7 +1,5 @@
 extends Node
 
-#const Utils = preload('Utils.gd')
-#
-#func _ready():
-#	set_process_input(true)
-#	pass
+func _ready():
+	get_node('SceneManager').set_main_scene('res://menu/MainMenu.tscn')
+	set_process(true)
