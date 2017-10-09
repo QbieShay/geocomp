@@ -24,4 +24,6 @@ params/stretch_mode = 0
 script/script = ExtResource( 1 )
 scene_to_load = ""
 
+[connection signal="button_up" from="." to="." method="_click"]
+
 
