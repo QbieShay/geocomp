@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=7 format=1]
 
-[ext_resource path="res://game/Game.gd" type="Script" id=1]
+[ext_resource path="res://game/Level.gd" type="Script" id=1]
 [ext_resource path="res://ui/GameUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/targets/Target.tscn" type="PackedScene" id=3]
-[ext_resource path="res://game/targets/TargetsManager.gd" type="Script" id=4]
-[ext_resource path="res://game/targets/FinalTarget.tscn" type="PackedScene" id=5]
-[ext_resource path="res://game/curve/CurveSupport.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Background.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/targets/FinalTarget.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/curve/CurveSupport.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Background.tscn" type="PackedScene" id=6]
 
 [node name="Root" type="Node2D"]
 
@@ -31,32 +30,28 @@ transform/scale = Vector2( 1.73509, 1.73509 )
 transform/pos = Vector2( 234.631, 161.93 )
 transform/scale = Vector2( 1.85809, 1.79872 )
 
-[node name="TargetsManager" type="Node2D" parent="."]
-
-script/script = ExtResource( 4 )
-
-[node name="Area2D" parent="." instance=ExtResource( 5 )]
+[node name="Area2D" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 764.369, 444.856 )
 transform/scale = Vector2( 1.8309, 1.8309 )
 
-[node name="Area2D 2" parent="." instance=ExtResource( 6 )]
+[node name="Area2D 2" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 356.277, 448.164 )
 transform/rot = -26.2304
 transform/scale = Vector2( 2.60045, 2.60045 )
 
-[node name="Area2D3" parent="." instance=ExtResource( 6 )]
+[node name="Area2D3" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 746.609, 194.558 )
 transform/rot = 8.53365
 transform/scale = Vector2( 2.60045, 2.60045 )
 
-[node name="Background" parent="." instance=ExtResource( 7 )]
+[node name="Background" parent="." instance=ExtResource( 6 )]
 
-[node name="CurveSupport" parent="." instance=ExtResource( 6 )]
+[node name="CurveSupport" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 584.464, 143 )
+transform/pos = Vector2( 263.49, 251.612 )
 transform/scale = Vector2( 6.79574, 1 )
 
 

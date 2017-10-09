@@ -72,7 +72,6 @@ func init_with_points(n, width = 0):
 			cp.connect("position_changed", self, "on_position_change", [3 * i + 2])
 			add_child(cp)
 	collider = BezierColliderNode.instance()
-	collider.set_points(curve.tesselate())
 	add_child(collider)
 	created = true
 	curve.set_bake_interval(1)
@@ -140,9 +139,7 @@ func on_position_change(idx):
 		curve.set_point_out(pt_idx, pt.get_pos() - knot.get_pos())
 	if force_equidirectional:
 		make_equidirectional(pt, pt_idx)
-	update()
-	collider.set_points(curve.tesselate())
-	
+	update()	
 	
 func make_equidirectional(pt, pt_idx):
 	if pt.type == ControlPoint.PointType.KNOT:
@@ -181,3 +178,6 @@ func set_glowing(g):
 		alpha = 0
 		alpha_grow = true
 		update()
+		
+func make_solid():
+	collider.set_points(curve.tesselate(6, 7))

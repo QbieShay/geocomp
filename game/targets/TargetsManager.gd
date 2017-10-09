@@ -7,6 +7,8 @@ const Utils = preload('res://Utils.gd')
 
 var targets = []
 
+onready var game = get_node('..').game
+
 func _ready():
 	var root = get_node(Utils.name_from_root())
 	targets = Utils.find_all_targets(Target, root)
@@ -37,6 +39,6 @@ func on_final_target_hit(distance):
 		chara.set_sleeping(true)
 	if targets.size() > 1:
 		# Not all targets were hit: game over
-		print("Lose!")
+		game.game_over()
 	else:
-		print("Win!")
+		game.win()

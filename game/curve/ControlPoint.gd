@@ -10,7 +10,7 @@ enum PointType {
 	OUT
 }
 
-var max_dist_from_initial_pos = 70
+var max_dist_from_initial_pos = 200
 var radius = 10
 var dragging = false
 var type = PointType.KNOT
