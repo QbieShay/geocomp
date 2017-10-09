@@ -8,3 +8,6 @@ static func find_all_targets(Type, root):
 			for t in ts:
 				found.append(t)
 	return found
+	
+static func name_from_root(name = null):
+	return '/root/Root' + ('/' + name if name else '');

@@ -40,4 +40,3 @@ func mouse_exit():
 	if(segment != null):
 		segment.curve.glowing = false
 		segment.glowing = false
-	pass # replace with function body

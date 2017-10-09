@@ -7,7 +7,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 50, 10 )
 
-[node name="Area2D" type="Area2D"]
+[node name="CurveSupport" type="Area2D"]
 
 input/pickable = true
 shapes/0/shape = SubResource( 1 )

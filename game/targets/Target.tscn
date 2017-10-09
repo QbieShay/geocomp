@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 radius = 15.0
 height = 30.0
 
-[node name="Area2D" type="Area2D"]
+[node name="Target" type="Area2D"]
 
 input/pickable = true
 shapes/0/shape = SubResource( 1 )

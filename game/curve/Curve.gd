@@ -49,8 +49,8 @@ func init_with_points(n, width = 0):
 	curve = Curve2D.new()
 	for i in range(0, n):
 		var pos = Vector2(span * i, 0)
-		var pos_in = Vector2(-span/2, span/2)
-		var pos_out = Vector2(span/2, -span/2)
+		var pos_in = Vector2(-span/3, 0)
+		var pos_out = Vector2(span/3, 0)
 		curve.add_point(pos, pos_in, pos_out)
 		var cp = ControlPointNode.instance()
 		cp.set_pos(pos)
@@ -75,7 +75,6 @@ func init_with_points(n, width = 0):
 	collider.set_points(curve.tesselate())
 	add_child(collider)
 	created = true
-	print('bake int: ', curve.get_bake_interval())
 	curve.set_bake_interval(1)
 
 func freeze_extremes():
