@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://game/Game.gd" type="Script" id=1]
 [ext_resource path="res://ui/GameUI.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://game/targets/TargetsManager.gd" type="Script" id=4]
 [ext_resource path="res://game/targets/FinalTarget.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/curve/CurveSupport.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Background.tscn" type="PackedScene" id=7]
 
 [node name="Node2D" type="Node2D"]
 
@@ -50,5 +51,7 @@ transform/scale = Vector2( 2.60045, 2.60045 )
 transform/pos = Vector2( 746.609, 194.558 )
 transform/rot = 8.53365
 transform/scale = Vector2( 2.60045, 2.60045 )
+
+[node name="Background" parent="." instance=ExtResource( 7 )]
 
 
