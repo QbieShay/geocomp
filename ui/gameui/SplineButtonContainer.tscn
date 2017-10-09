@@ -1,8 +1,6 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene format=1]
 
-[ext_resource path="res://ui/gameui/SplineButtonContainer.gd" type="Script" id=1]
-
-[node name="HBoxContainer" type="HBoxContainer"]
+[node name="SplineButtonContainer" type="HBoxContainer"]
 
 anchor/left = 1
 anchor/right = 1
@@ -15,6 +13,5 @@ margin/top = 70.0
 margin/right = 896.0
 margin/bottom = 102.0
 alignment = 0
-script/script = ExtResource( 1 )
 
 

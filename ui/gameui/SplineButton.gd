@@ -4,6 +4,7 @@ var type = 0
 var cancel_texture 
 var normal_texture
 var segment = null
+var gameui
 
 func set_spline_type(type_index, normal, pressed, used):
 	type = type_index
@@ -26,7 +27,7 @@ func pressed_callback():
 		set_normal_texture(normal_texture)
 		set_pressed(false)
 	else:
-		get_parent().position_spline(self, type)
+		gameui.position_spline(self, type)
 
 
 func mouse_enter():

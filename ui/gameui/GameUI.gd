@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends Control
 
 var spline_button = preload("SplineButton.tscn")
 var mouse_follow = preload("MouseFollowSplineTooltip.tscn")
@@ -7,7 +7,13 @@ var pressed = []
 var cancels = []
 var mf
 
-func _loadImgs():
+var container
+
+export var n_1_splines = 0
+export var n_2_splines = 0
+export var n_3_splines = 0
+
+func load_imgs():
 	for i in range (3):
 		var img = ImageTexture.new()
 		img.load("res://ui/gameui/img/Spline" + str(i+1) + "_Active.png")
@@ -20,11 +26,13 @@ func _loadImgs():
 		cancels.append(img)
 
 func _ready():
-	_loadImgs()
-	set_available_buttons( 3,1,4)
+	container = get_node("HBoxContainer")
+	load_imgs()
+	set_available_buttons(n_1_splines, n_2_splines, n_3_splines)
 
 func set_available_buttons(spline1, spline2, spline3):
-	for child in get_children():
+	
+	for child in container.get_children():
 		child.queue_free()
 	for i in range (spline1):
 		init_spline_btn(1)
@@ -37,7 +45,8 @@ func set_available_buttons(spline1, spline2, spline3):
 func init_spline_btn(type):
 	var btn = spline_button.instance()
 	btn.set_spline_type(type, normals[type-1], pressed[type-1] , cancels[type-1])
-	add_child(btn)
+	btn.gameui = self
+	container.add_child(btn)
 
 func position_spline(who, type):
 	spawn_mouse_tip(who, type)

@@ -65,7 +65,6 @@ margin/bottom = 316.0
 textures/normal = ExtResource( 5 )
 textures/pressed = ExtResource( 6 )
 textures/hover = ExtResource( 7 )
-scene_to_load = "res://menu/menuitems/ManualScene.tscn"
 
 [node name="TheoryButton" parent="Container/VBoxContainer" instance=ExtResource( 1 )]
 
