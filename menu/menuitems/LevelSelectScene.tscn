@@ -3,7 +3,7 @@
 [ext_resource path="res://menu/menuitems/LevelSelectScene.gd" type="Script" id=1]
 [ext_resource path="res://ui/YIKES!__.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://ui/BackButton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://ui/BackBtn.png" type="Texture" id=4]
+[ext_resource path="res://ui/img/BackBtn.png" type="Texture" id=4]
 [ext_resource path="res://menu/menuitems/Preview.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]

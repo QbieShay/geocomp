@@ -9,10 +9,11 @@ var targets = []
 
 onready var game = get_node('..').game
 
-func _ready():
+func find_targets():
+	targets.clear()
 	var root = get_node(Utils.name_from_root())
 	targets = Utils.find_all_targets(Target, root)
-#	print('Found ', targets.size(), ' targets')
+	print('Found ', targets.size(), ' targets')
 	for t in targets:
 		if t extends FinalTarget:
 			t.connect("target_hit", self, "on_final_target_hit")

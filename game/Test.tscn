@@ -1,11 +1,12 @@
 [gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://game/Level.gd" type="Script" id=1]
-[ext_resource path="res://ui/GameUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/gameui/GameUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/targets/Target.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/targets/FinalTarget.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/curve/CurveSupport.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Background.tscn" type="PackedScene" id=6]
+
 
 [node name="Root" type="Node2D"]
 

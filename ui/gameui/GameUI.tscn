@@ -41,7 +41,7 @@ margin/bottom = 44.0
 margin/right = 64.0
 margin/bottom = 64.0
 
-[node name="PlayButtton" type="TextureButton" parent="."]
+[node name="PlayButton" type="TextureButton" parent="."]
 
 anchor/left = 1
 anchor/right = 1
@@ -82,5 +82,7 @@ textures/pressed = ExtResource( 8 )
 textures/hover = ExtResource( 9 )
 params/resize_mode = 0
 params/stretch_mode = 0
+
+[connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]
 
 

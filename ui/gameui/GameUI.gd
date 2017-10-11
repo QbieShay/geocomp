@@ -1,5 +1,7 @@
 extends Control
 
+const Utils = preload('res://Utils.gd')
+
 var spline_button = preload("SplineButton.tscn")
 var mouse_follow = preload("MouseFollowSplineTooltip.tscn")
 var normals = []
@@ -59,4 +61,8 @@ func spawn_mouse_tip(caller, type):
 		mf.set_current_curve(type)
 		mf.container = self
 		mf.button = caller
-	
+		
+		
+func _on_ResetButton_pressed():
+	var game = get_node(Utils.name_from_root('Level')).game
+	game.reset_level()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=1]
 
-[ext_resource path="res://ui/GameUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ui/gameui/GameUI.tscn" type="PackedScene" id=1]
 
 [node name="UIRoot" type="CanvasLayer"]
 

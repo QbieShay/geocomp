@@ -45,7 +45,9 @@ func start_level():
 
 func reset_level():
 	if chara:
-		chara.queue_free()
+		var wch = weakref(chara)
+		if wch.get_ref():
+			chara.queue_free()
 	set_curve_gizmos_visible(true)
 	set_control_points_enabled(true)
 	set_supports_visible(true)
