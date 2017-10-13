@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://ui/gameui/GameUI.gd" type="Script" id=1]
 [ext_resource path="res://ui/gameui/SplineButtonContainer.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://ui/gameui/img/RetryButton_Active.png" type="Texture" id=7]
 [ext_resource path="res://ui/gameui/img/RetryButton_Pressed.png" type="Texture" id=8]
 [ext_resource path="res://ui/gameui/img/RetryButton_Hover.png" type="Texture" id=9]
+[ext_resource path="res://ui/gameui/EndLevelPopup.tscn" type="PackedScene" id=10]
 
 [node name="GameUI" type="Control"]
 
@@ -70,10 +71,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 67.0
-margin/top = 3.0
-margin/right = 3.0
-margin/bottom = 67.0
+margin/left = 69.0
+margin/top = 1.0
+margin/right = 5.0
+margin/bottom = 65.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -82,6 +83,18 @@ textures/pressed = ExtResource( 8 )
 textures/hover = ExtResource( 9 )
 params/resize_mode = 0
 params/stretch_mode = 0
+
+[node name="Popup" parent="." instance=ExtResource( 10 )]
+
+visibility/visible = false
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+margin/left = 309.0
+margin/top = 232.0
+margin/right = -309.0
+margin/bottom = -233.0
 
 [connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]
 
