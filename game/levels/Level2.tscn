@@ -6,42 +6,49 @@
 [ext_resource path="res://game/curve/CurveSupport.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/character/SpawnPoint.tscn" type="PackedScene" id=5]
 
-[node name="Level1" instance=ExtResource( 1 )]
+[node name="Level2" instance=ExtResource( 1 )]
 
 [node name="GameUI" parent="."]
 
 n_1_splines = 2
+n_2_splines = 1
 
 [node name="Target" parent="Targets" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 135.208, 302.996 )
+transform/pos = Vector2( 172.675, 208.618 )
 
 [node name="Target1" parent="Targets" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 605.177, 405.623 )
+transform/pos = Vector2( 375.487, 249.343 )
+
+[node name="Target2" parent="Targets" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 568.524, 480.662 )
 
 [node name="FinalTarget" parent="Targets" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 964.913, 509.34 )
-
-[node name="FinalTarget1" parent="Targets" instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 36.5759, 228.353 )
+transform/pos = Vector2( 865.818, 420.389 )
 
 [node name="CurveSupport" parent="Segments" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 210.484, 312.089 )
-transform/rot = -35.8319
-transform/scale = Vector2( 4.89759, 1.34383 )
+transform/pos = Vector2( 211.723, 276.222 )
+transform/rot = -11.2043
+transform/scale = Vector2( 3.87472, 1 )
 
 [node name="CurveSupport1" parent="Segments" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 717.21, 516.774 )
-transform/rot = -7.87324
-transform/scale = Vector2( 4.61855, 1.25972 )
+transform/pos = Vector2( 459.986, 459.112 )
+transform/rot = -44.8624
+transform/scale = Vector2( 2.04684, 1.3248 )
+
+[node name="CurveSupport2" parent="Segments" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 745.263, 491.365 )
+transform/rot = 13.8936
+transform/scale = Vector2( 3.37836, 1 )
 
 [node name="SpawnPoint" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 50.7213, 122.76 )
+transform/pos = Vector2( 52.1283, 129.796 )
 
 

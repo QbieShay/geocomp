@@ -23,8 +23,8 @@ bounce = 0.0
 gravity_scale = 2.5
 custom_integrator = false
 continuous_cd = 2
-contacts_reported = 0
-contact_monitor = false
+contacts_reported = 1
+contact_monitor = true
 sleeping = false
 can_sleep = true
 velocity/linear = Vector2( 0, 0 )
@@ -47,5 +47,29 @@ _update_shape_index = 0
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="SnowEmitter" type="Particles2D" parent="."]
+
+transform/pos = Vector2( -11.0861, 16.6146 )
+config/amount = 60
+config/lifetime = 0.4
+config/process_mode = 1
+config/local_space = false
+params/direction = 228.0
+params/spread = 90.0
+params/linear_velocity = 10.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 2.0
+params/final_size = 0.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
 
 

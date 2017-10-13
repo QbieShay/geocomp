@@ -25,5 +25,5 @@ func _draw():
 	draw_set_transform(Vector2(), 0, Vector2(1, 1))
 	draw_circle(Vector2(), 8, Color(1, 0, 0))
 	draw_string(font, Vector2(16, 7), "START", Color(1, 0, 0))
-	draw_set_transform(Vector2(0, -50 + y), 0, Vector2(20, 20))
+	draw_set_transform(Vector2(0, -40 + y), 0, Vector2(20, 20))
 	draw_primitive(triangle, colors, Vector2Array([]))

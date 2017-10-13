@@ -12,7 +12,6 @@ var cur_main_scene_class_path
 # Loads the given scene by path, instances it, destroys the
 # current main scene and sets the new loaded one as main.
 func set_main_scene(scene_name, save_in_stack = true):
-	print(scene_name)
 	var SceneClass = load(scene_name)
 	assert(SceneClass)
 	if cur_main_scene:

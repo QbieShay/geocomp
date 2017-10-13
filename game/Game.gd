@@ -30,7 +30,7 @@ func _input(event):
 func game_over():
 	# TODO
 	print('GAME OVER!')
-	reset_level()
+#	reset_level()
 	
 func win():
 	print('YOU WIN!')
