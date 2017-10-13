@@ -86,7 +86,6 @@ params/stretch_mode = 0
 
 [node name="Popup" parent="." instance=ExtResource( 10 )]
 
-visibility/visible = false
 anchor/left = 3
 anchor/top = 3
 anchor/right = 3

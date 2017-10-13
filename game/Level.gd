@@ -5,6 +5,8 @@ const TargetsManager = preload('targets/TargetsManager.gd')
 
 var game
 var targets_manager
+var cur_loaded_level
+var level_num
 
 func _ready():
 	game = Game.new()
@@ -15,9 +17,17 @@ func _ready():
 	add_child(targets_manager)
 	
 func load_level(n):
+	if cur_loaded_level:
+		cur_loaded_level.free()
+		
 	var LevelScene = load('res://game/levels/Level' + str(n) + '.tscn')
 	assert(LevelScene)
-	add_child(LevelScene.instance())
+	var level = LevelScene.instance()
+	cur_loaded_level = level
+	level_num = n
+	add_child(level)
+	
+	# Setup targets and game
 	game.set_targets_root(get_node("./Level" + str(n) + "/Targets"))
 	targets_manager.find_targets()
 	var spawn = get_node('./Level' + str(n) + '/SpawnPoint')

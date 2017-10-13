@@ -24,5 +24,4 @@ func on_body_enter(body):
 	var fx = TakenFXScene.instance()
 	fx.set_pos(get_pos())
 	get_parent().add_child(fx)
-#	breakpoint
 	emit_signal("target_hit", abs(body.get_global_pos().y - get_global_pos().y))
