@@ -43,6 +43,9 @@ func set_available_buttons(spline1, spline2, spline3):
 	for i in range (spline3):
 		init_spline_btn(3)
 	pass
+ 
+func win(score):
+	get_node("Popup").show_score(score)
 
 func init_spline_btn(type):
 	var btn = spline_button.instance()

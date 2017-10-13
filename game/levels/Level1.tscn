@@ -8,7 +8,7 @@
 
 [node name="Level1" instance=ExtResource( 1 )]
 
-[node name="GameUI" parent="."]
+[node name="GameUI" parent="GameUILayer"]
 
 n_1_splines = 2
 
@@ -23,10 +23,6 @@ transform/pos = Vector2( 605.177, 405.623 )
 [node name="FinalTarget" parent="Targets" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 964.913, 509.34 )
-
-[node name="FinalTarget1" parent="Targets" instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 36.5759, 228.353 )
 
 [node name="CurveSupport" parent="Segments" instance=ExtResource( 4 )]
 

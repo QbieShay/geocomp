@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://EndGamePopup.gd" type="Script" id=1]
 [ext_resource path="res://ui/gameui/Popup.png" type="Texture" id=2]
 [ext_resource path="res://ui/YIKES!__.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://ui/gameui/img/RetryButton_Active.png" type="Texture" id=4]
-[ext_resource path="res://ui/gameui/img/NextButton_Active.png" type="Texture" id=5]
-[ext_resource path="res://ui/gameui/img/NextButton_Pressed.png" type="Texture" id=6]
-[ext_resource path="res://ui/gameui/img/NextButton_Hover.png" type="Texture" id=7]
+[ext_resource path="res://ui/gameui/img/RetryButton_Pressed.png" type="Texture" id=5]
+[ext_resource path="res://ui/gameui/img/RetryButton_Hover.png" type="Texture" id=6]
+[ext_resource path="res://ui/gameui/img/NextButton_Active.png" type="Texture" id=7]
+[ext_resource path="res://ui/gameui/img/NextButton_Pressed.png" type="Texture" id=8]
+[ext_resource path="res://ui/gameui/img/NextButton_Hover.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -91,7 +93,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="TextureButton 2" type="TextureButton" parent="."]
+[node name="ResetButton" type="TextureButton" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -105,10 +107,12 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 4 )
+textures/pressed = ExtResource( 5 )
+textures/hover = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="NextButton" type="TextureButton" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -121,14 +125,14 @@ margin/bottom = 428.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 5 )
-textures/pressed = ExtResource( 6 )
-textures/hover = ExtResource( 7 )
+textures/normal = ExtResource( 7 )
+textures/pressed = ExtResource( 8 )
+textures/hover = ExtResource( 9 )
 params/resize_mode = 0
 params/stretch_mode = 0
 
-[connection signal="pressed" from="TextureButton 2" to="." method="reset"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]
 
-[connection signal="pressed" from="TextureButton" to="." method="next"]
+[connection signal="pressed" from="NextButton" to="." method="_on_NextButton_pressed"]
 
 

@@ -33,7 +33,11 @@ func game_over():
 #	reset_level()
 	
 func win():
-	print('YOU WIN!')
+	#FIXME SENPAI
+	var lvl_num = get_node("..").level_num
+	var gameui = get_node("../Level"+str(lvl_num)+"/GameUILayer/GameUI")
+	assert(gameui)
+	gameui.win(0)
 	
 func start_level():
 		chara = CharacterNode.instance()
@@ -68,26 +72,26 @@ func set_spawn_visible(v):
 		spawn.hide()
 		
 func set_control_points_enabled(b):
-	var cps = Utils.find_all_targets(ControlPoint, root)
+	var cps = Utils.find_all_nodes(ControlPoint, root)
 #	print('found ', cps.size(), ' cps')
 	for cp in cps:
 		cp.set_process_input(b)
 		
 func set_curve_gizmos_visible(v):
-	var curves = Utils.find_all_targets(Curve, root)
+	var curves = Utils.find_all_nodes(Curve, root)
 #	print('found ', curves.size(), ' curves')
 	for curve in curves:
 		curve.draw_polygon = v
 		curve.update()
 		
 func make_curves_solid():
-	var curves = Utils.find_all_targets(Curve, root)
+	var curves = Utils.find_all_nodes(Curve, root)
 #	print('found ', curves.size(), ' curves')
 	for curve in curves:
 		curve.make_solid()
 		
 func set_supports_visible(v):
-	var supports = Utils.find_all_targets(CurveSupport, root)
+	var supports = Utils.find_all_nodes(CurveSupport, root)
 	for support in supports:
 		support.visible = v
 		support.update()

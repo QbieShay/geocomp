@@ -18,8 +18,8 @@ func _ready():
 	
 func load_level(n):
 	if cur_loaded_level:
-		cur_loaded_level.free()
-		
+		cur_loaded_level.queue_free()
+	breakpoint
 	var LevelScene = load('res://game/levels/Level' + str(n) + '.tscn')
 	assert(LevelScene)
 	var level = LevelScene.instance()
@@ -33,3 +33,5 @@ func load_level(n):
 	var spawn = get_node('./Level' + str(n) + '/SpawnPoint')
 	assert(spawn)
 	game.spawn = spawn
+	game.reset_level()
+	

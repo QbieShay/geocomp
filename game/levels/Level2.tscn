@@ -8,7 +8,7 @@
 
 [node name="Level2" instance=ExtResource( 1 )]
 
-[node name="GameUI" parent="."]
+[node name="GameUI" parent="GameUILayer"]
 
 n_1_splines = 2
 n_2_splines = 1

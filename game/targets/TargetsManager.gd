@@ -12,7 +12,7 @@ onready var game = get_node('..').game
 func find_targets():
 	targets.clear()
 	var root = get_node(Utils.name_from_root())
-	targets = Utils.find_all_targets(Target, root)
+	targets = Utils.find_all_nodes(Target, root)
 	print('Found ', targets.size(), ' targets')
 	for t in targets:
 		if t extends FinalTarget:
@@ -27,7 +27,7 @@ func on_target_hit(distance, target):
 	# Destroy the target
 	var idx = targets.find(target)
 	assert(idx >= 0)
-	target.get_parent().remove_child(target)
+	targets.remove(idx)
 	target.queue_free()
 	
 func calc_score(distance):

@@ -4,7 +4,14 @@
 
 [node name="LevelBase" type="Node"]
 
-[node name="GameUI" parent="." instance=ExtResource( 1 )]
+[node name="GameUILayer" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="GameUI" parent="GameUILayer" instance=ExtResource( 1 )]
 
 [node name="Targets" type="Node" parent="."]
 
