@@ -4,6 +4,7 @@ const ControlPointNode = preload('ControlPoint.tscn')
 const ControlPoint = preload('ControlPoint.gd')
 const BezierColliderNode = preload('BezierCollider.tscn')
 
+export var point_radius = 10.0
 export var curve_thickness = 20.0
 export var curve_color = Color(1, 1, 1, 1)
 export var point_color = Color(1, 1, 0.5, 1)
@@ -103,13 +104,13 @@ func _draw():
 			draw_line(p_out, p_in, polygon_color, polygon_thickness)
 		p_out = pos + curve.get_point_out(i)
 		
-		add_circle(pos, 5, point_color)
+		add_circle(pos, point_radius, point_color)
 		if i > 0:
-			add_circle(p_in, 5, point_in_color)
+			add_circle(p_in, point_radius, point_in_color)
 			draw_line(pos, p_in, polygon_color, polygon_thickness)
 
 		if i < curve.get_point_count() - 1:
-			add_circle(p_out, 5 , point_out_color)
+			add_circle(p_out, point_radius , point_out_color)
 			draw_line(pos, p_out, polygon_color, polygon_thickness)
 
 func add_circle(pos, radius, color):
