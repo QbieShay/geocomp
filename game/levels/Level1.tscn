@@ -1,43 +1,43 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
-[ext_resource path="res://game/targets/Target.tscn" type="PackedScene" id=1]
-[ext_resource path="res://game/targets/FinalTarget.tscn" type="PackedScene" id=2]
-[ext_resource path="res://game/curve/CurveSupport.tscn" type="PackedScene" id=3]
-[ext_resource path="res://ui/gameui/GameUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/levels/LevelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/targets/Target.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/targets/FinalTarget.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/curve/CurveSupport.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/character/SpawnPoint.tscn" type="PackedScene" id=5]
 
+[node name="Level1" instance=ExtResource( 1 )]
 
-[node name="Level1" type="Node"]
-
-[node name="Targets" type="Node" parent="."]
-
-[node name="Target" parent="Targets" instance=ExtResource( 1 )]
-
-transform/pos = Vector2( 116.911, 206.825 )
-
-[node name="Target1" parent="Targets" instance=ExtResource( 1 )]
-
-transform/pos = Vector2( 586.485, 318.256 )
-
-[node name="FinalTarget" parent="Targets" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 947.363, 410.656 )
-
-[node name="Segments" type="Node" parent="."]
-
-[node name="CurveSupport" parent="Segments" instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 209.471, 221.55 )
-transform/rot = -37.047
-transform/scale = Vector2( 4.6045, 1 )
-
-[node name="CurveSupport1" parent="Segments" instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 706.778, 414.599 )
-transform/rot = -7.87719
-transform/scale = Vector2( 4.90713, 1 )
-
-[node name="GameUI" parent="." instance=ExtResource( 4 )]
+[node name="GameUI" parent="."]
 
 n_1_splines = 2
+
+[node name="Target" parent="Targets" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 135.208, 302.996 )
+
+[node name="Target1" parent="Targets" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 605.177, 405.623 )
+
+[node name="FinalTarget" parent="Targets" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 964.373, 509.88 )
+
+[node name="CurveSupport" parent="Segments" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 210.484, 312.089 )
+transform/rot = -35.8319
+transform/scale = Vector2( 4.89759, 1.34383 )
+
+[node name="CurveSupport1" parent="Segments" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 717.21, 516.774 )
+transform/rot = -7.87324
+transform/scale = Vector2( 4.61855, 1.25972 )
+
+[node name="SpawnPoint" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 50.7213, 122.76 )
 
 

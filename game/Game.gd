@@ -11,6 +11,7 @@ var started = false
 var chara
 var orig_targets_root
 var cloned_targets_root
+var spawn
 
 onready var root = get_node(Utils.name_from_root())
 
@@ -37,13 +38,15 @@ func win():
 func start_level():
 		chara = CharacterNode.instance()
 		chara.set_name('Character')
-		chara.set_pos(Vector2(50, 50))
+		assert(spawn)
+		chara.set_pos(spawn.get_pos())
 		add_child(chara)
 		started = true
 		make_curves_solid()
 		set_control_points_enabled(false)
 		set_curve_gizmos_visible(false)
 		set_supports_visible(false)
+		set_spawn_visible(false)
 
 func reset_level():
 	if chara:
@@ -54,8 +57,16 @@ func reset_level():
 	set_control_points_enabled(true)
 	set_supports_visible(true)
 	reset_targets()
+	set_spawn_visible(true)
 	started = false
 	
+func set_spawn_visible(v):
+	if !spawn: return
+	if v:
+		spawn.show()
+	else:
+		spawn.hide()
+		
 func set_control_points_enabled(b):
 	var cps = Utils.find_all_targets(ControlPoint, root)
 #	print('found ', cps.size(), ' cps')
