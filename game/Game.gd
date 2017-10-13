@@ -9,6 +9,8 @@ const Utils = preload('res://Utils.gd')
 
 var started = false 
 var chara
+var orig_targets_root
+var cloned_targets_root
 
 onready var root = get_node(Utils.name_from_root())
 
@@ -51,6 +53,7 @@ func reset_level():
 	set_curve_gizmos_visible(true)
 	set_control_points_enabled(true)
 	set_supports_visible(true)
+	reset_targets()
 	started = false
 	
 func set_control_points_enabled(b):
@@ -77,3 +80,15 @@ func set_supports_visible(v):
 	for support in supports:
 		support.visible = v
 		support.update()
+
+func set_targets_root(node):
+	orig_targets_root = node
+	cloned_targets_root = node.duplicate()
+	
+func reset_targets():
+	var level = get_parent()
+	level.remove_child(orig_targets_root)
+	orig_targets_root.free()
+	level.add_child(cloned_targets_root)
+	level.targets_manager.find_targets()
+	set_targets_root(cloned_targets_root)

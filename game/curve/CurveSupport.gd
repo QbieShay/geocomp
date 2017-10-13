@@ -31,7 +31,7 @@ func _draw():
 			draw_rect(Rect2(-size.x, -size.y, 2 * size.x, 2 * size.y), Color(0.7, 0.8, 0.1, 0.5))
 #	if glowing:
 #		draw_rect(Rect2(-size.x, -0.6 * size.y, 2 * size.x, 1.2 * size.y), Color(0.1, 0.8, 0.89, 0.4))
-	
+
 func add_curve(n_points):
 	if curve and !curve.is_queued_for_deletion():
 		return false

@@ -27,7 +27,7 @@ func on_target_hit(distance, target):
 	# Destroy the target
 	var idx = targets.find(target)
 	assert(idx >= 0)
-	targets.remove(idx)
+	target.get_parent().remove_child(target)
 	target.queue_free()
 	
 func calc_score(distance):

@@ -49,8 +49,11 @@ func _input(event):
 
 func _draw():
 	if dragging:
-		draw_set_transform(Vector2(), -get_global_rot(), Vector2(1 / get_global_scale().x, 1 / get_global_scale().y))
-		draw_circle((initial_pos - get_global_pos()) * 1, max_dist_from_initial_pos, Color(0.8, 0.1, 0.1, 0.5))
+		draw_set_transform(Vector2(), -get_global_rot(), 
+			Vector2(1 / get_global_scale().x, 1 / get_global_scale().y))
+		draw_circle((initial_pos - get_global_pos()) * 1, 
+			max_dist_from_initial_pos, 
+			Color(0.8, 0.1, 0.1, 0.3))
 #	if type == PointType.KNOT:
 #		draw_circle(Vector2(), radius, Color(1, 0.6, 0.2))
 #	elif type == PointType.IN:
