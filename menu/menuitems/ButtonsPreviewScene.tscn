@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://ui/BackButton.tscn" type="PackedScene" id=1]
-[ext_resource path="res://ui/BackBtn.png" type="Texture" id=2]
+[ext_resource path="res://ui/img/BackBtn.png" type="Texture" id=2]
 [ext_resource path="res://menu/menuitems/Preview.gd" type="Script" id=3]
 
 [node name="ButtonsPreviewScene" type="Container"]
