@@ -4,7 +4,7 @@ const TheoryButton = preload('TheoryButton.gd')
 
 func _ready():
 	var container = get_node("ButtonsContainer")
-	for i in range(2):
+	for i in range(4):
 		var lvl = TheoryButton.new()
 		lvl.idx = i + 1
 		container.add_child(lvl)

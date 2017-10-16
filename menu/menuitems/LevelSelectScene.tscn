@@ -15,6 +15,13 @@ font/font = ExtResource( 3 )
 
 script/script = ExtResource( 2 )
 
+[node name="Preview" parent="."]
+
+margin/left = 229.0
+margin/top = 57.0
+margin/right = 234.0
+margin/bottom = 221.0
+
 [node name="Label" type="Label" parent="."]
 
 anchor/right = 1

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://game/img/cloud.png" type="Texture" id=1]
+[ext_resource path="res://game/Cloud.gd" type="Script" id=2]
+
+[node name="Sprite" type="Sprite"]
+
+visibility/self_opacity = 0.3
+transform/pos = Vector2( 0.272064, 0.23415 )
+transform/scale = Vector2( 0.558949, 0.558949 )
+texture = ExtResource( 1 )
+script/script = ExtResource( 2 )
+
+
