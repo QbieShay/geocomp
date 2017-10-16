@@ -26,9 +26,8 @@ func set_current_curve(curve):
 		sprite.set_texture(Spline3Tooltip)
 
 func _input(event):
-	if(event.type == InputEvent.MOUSE_BUTTON and
-		event.pressed):
-		if(segment != null):
+	if event.type == InputEvent.MOUSE_BUTTON and event.pressed:
+		if segment != null:
 			if segment.add_curve(type+1):
 				button.set_segment(segment)
 			die()

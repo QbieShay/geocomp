@@ -34,7 +34,6 @@ func _ready():
 	set_available_buttons(n_1_splines, n_2_splines, n_3_splines)
 
 func set_available_buttons(spline1, spline2, spline3):
-	
 	for child in container.get_children():
 		child.queue_free()
 	for i in range (spline1):

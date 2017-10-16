@@ -19,7 +19,6 @@ func _ready():
 func load_level(n):
 	if cur_loaded_level:
 		cur_loaded_level.queue_free()
-	breakpoint
 	var LevelScene = load('res://game/levels/Level' + str(n) + '.tscn')
 	assert(LevelScene)
 	var level = LevelScene.instance()

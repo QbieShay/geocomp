@@ -55,7 +55,9 @@ func on_area_enter(area):
 func on_area_exit(area):
 	if !area extends MouseFollowSpline:
 		return
-	area.segment = null
+	if area.segment == self:
+		# prevent "race condition" where we unset a segment other than us
+		area.segment = null
 	self.highlighted = false
 	
 func set_curve(c):
