@@ -96,6 +96,8 @@ margin/top = 232.0
 margin/right = -309.0
 margin/bottom = -233.0
 
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+
 [connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]
 
 

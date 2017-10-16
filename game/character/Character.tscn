@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://game/character/Character.gd" type="Script" id=1]
 [ext_resource path="res://game/character/icon.png" type="Texture" id=2]
@@ -6,7 +6,12 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 20.0
+radius = 18.0
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 13.4285, 10 )
 
 [node name="Character" type="RigidBody2D"]
 
@@ -24,7 +29,7 @@ gravity_scale = 2.5
 custom_integrator = false
 continuous_cd = 2
 contacts_reported = 1
-contact_monitor = true
+contact_monitor = false
 sleeping = false
 can_sleep = true
 velocity/linear = Vector2( 0, 0 )
@@ -50,14 +55,15 @@ __meta__ = {
 
 [node name="SnowEmitter" type="Particles2D" parent="."]
 
-transform/pos = Vector2( -11.0861, 16.6146 )
+transform/pos = Vector2( -10.958, 16.6146 )
 config/amount = 60
 config/lifetime = 0.4
+config/emitting = false
 config/process_mode = 1
 config/local_space = false
 params/direction = 228.0
 params/spread = 90.0
-params/linear_velocity = 10.0
+params/linear_velocity = 40.0
 params/spin_velocity = 0.0
 params/orbit_velocity = 0.0
 params/gravity_direction = 0.0
@@ -71,5 +77,26 @@ params/final_size = 0.0
 params/hue_variation = 0.0
 params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
+
+[node name="SnowEmitterCollider" type="Area2D" parent="."]
+
+transform/pos = Vector2( -6.60246, 16.6113 )
+transform/scale = Vector2( 0.202982, 0.0439897 )
+input/pickable = true
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1.63057, 0, 0, 2.79998, -0.624474, 6.89566 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnowEmitterCollider"]
+
+transform/pos = Vector2( -0.624474, 6.89566 )
+transform/scale = Vector2( 1.63057, 2.79998 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 

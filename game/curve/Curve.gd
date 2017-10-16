@@ -54,13 +54,16 @@ func init_with_points(n, width = 0):
 		var pos_out = Vector2(span/3, 0)
 		curve.add_point(pos, pos_in, pos_out)
 		var cp = ControlPointNode.instance()
+		var knot = cp
 		cp.set_pos(pos)
+		cp.max_dist_from_initial_pos = 120
 		control_points.append(cp)
 		cp.connect("position_changed", self, "on_position_change", [3 * i])
 		add_child(cp)
 		cp = ControlPointNode.instance()
 		cp.set_pos(pos + pos_in)
 		cp.type = ControlPoint.PointType.IN
+		cp.knot = knot
 		control_points.append(cp)
 		if i > 0:
 			cp.connect("position_changed", self, "on_position_change", [3 * i + 1])
@@ -68,6 +71,7 @@ func init_with_points(n, width = 0):
 		cp = ControlPointNode.instance()
 		cp.set_pos(pos + pos_out)
 		cp.type = ControlPoint.PointType.OUT
+		cp.knot = knot
 		control_points.append(cp)
 		if i < n - 1:
 			cp.connect("position_changed", self, "on_position_change", [3 * i + 2])

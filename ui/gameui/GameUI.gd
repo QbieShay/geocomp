@@ -2,18 +2,19 @@ extends Control
 
 const Utils = preload('res://Utils.gd')
 
+export var n_1_splines = 0
+export var n_2_splines = 0
+export var n_3_splines = 0
+
 var spline_button = preload("SplineButton.tscn")
 var mouse_follow = preload("MouseFollowSplineTooltip.tscn")
 var normals = []
 var pressed = []
 var cancels = []
 var mf
-
 var container
 
-export var n_1_splines = 0
-export var n_2_splines = 0
-export var n_3_splines = 0
+onready var game = get_node(Utils.name_from_root('Level')).game
 
 func load_imgs():
 	for i in range (3):
@@ -67,5 +68,8 @@ func spawn_mouse_tip(caller, type):
 		
 		
 func _on_ResetButton_pressed():
-	var game = get_node(Utils.name_from_root('Level')).game
 	game.reset_level()
+
+
+func _on_PlayButton_pressed():
+	game.start_level()
