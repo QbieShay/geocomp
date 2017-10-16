@@ -1,10 +1,12 @@
 extends Container
 
-const PreviewButton = preload('PreviewButton.gd')
+const ManualButton = preload('ManualButton.gd')
 
 func _ready():
 	var container = get_node("ButtonsContainer")
-#	for i in range(5):
-#		var lvl = PreviewButton.new()
-#		lvl.preview_image = "res://menu/menuitems/img/manual/Manual_" + str(i) + ".png"
-#		container.add_child(lvl)
+	for i in range(2):
+		var lvl = ManualButton.new()
+		lvl.idx = i + 1
+		container.add_child(lvl)
+		if i == 0:
+			get_node("Preview").set_preview(lvl.preview_image)

@@ -78,5 +78,6 @@ margin/bottom = 476.0
 textures/normal = ExtResource( 8 )
 textures/pressed = ExtResource( 9 )
 textures/hover = ExtResource( 10 )
+scene_to_load = "res://menu/menuitems/TheoryScene.tscn"
 
 

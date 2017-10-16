@@ -4,18 +4,18 @@ const ControlPointNode = preload('ControlPoint.tscn')
 const ControlPoint = preload('ControlPoint.gd')
 const BezierColliderNode = preload('BezierCollider.tscn')
 
-export var point_radius = 10.0
-export var curve_thickness = 20.0
-export var curve_color = Color(1, 1, 1, 1)
-export var point_color = Color(1, 1, 0.5, 1)
-export var point_in_color = Color(1, 0.5, 1, 1)
-export var point_out_color = Color(0.5, 1, 1, 1)
-export var draw_polygon = true
-export var connect_in_out = false
-export var polygon_thickness = 2.0
-export var polygon_color = Color(0.3, 1, 0.6)
-export var force_equidirectional = true
-export var glow_color = Color(1, 0.1, 0.1)
+var point_radius = 10.0
+var curve_thickness = 20.0
+var curve_color = Color(1, 1, 1, 1)
+var point_color = Color(1, 1, 0.5, 1)
+var point_in_color = Color(1, 0.5, 1, 1)
+var point_out_color = Color(0.5, 1, 1, 1)
+var draw_polygon = true
+var connect_in_out = false
+var polygon_thickness = 2.0
+var polygon_color = Color(0.3, 1, 0.6)
+var force_equidirectional = true
+var glow_color = Color(1, 0.1, 0.1)
 
 var collider
 var curve

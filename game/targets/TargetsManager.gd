@@ -34,9 +34,9 @@ func calc_score(distance):
 	return max(0, 100 - distance * distance / 45)
 	
 func on_final_target_hit(distance):
-	print('final target')
+#	print('final target')
 	var chara = game.chara
-	print('game: ', game, ', targets: ', targets, ' chara: ', chara)
+#	print('game: ', game, ', targets: ', targets, ' chara: ', chara)
 	if chara:
 		chara.set_linear_velocity(Vector2())
 		chara.set_sleeping(true)
@@ -44,5 +44,4 @@ func on_final_target_hit(distance):
 		# Not all targets were hit: game over
 		game.game_over()
 	else:
-		print("win?")
 		game.win()

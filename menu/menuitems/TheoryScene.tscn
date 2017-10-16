@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://menu/menuitems/ButtonsPreviewScene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://menu/menuitems/TheoryScene.gd" type="Script" id=2]
+
+[node name="TheoryScene" instance=ExtResource( 1 )]
+
+script/script = ExtResource( 2 )
+
+
