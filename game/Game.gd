@@ -103,7 +103,7 @@ func set_targets_root(node):
 func reset_targets():
 	var level = get_parent()
 	level.remove_child(orig_targets_root)
-	orig_targets_root.free()
+	orig_targets_root.queue_free()
 	level.add_child(cloned_targets_root)
 	level.targets_manager.find_targets()
 	set_targets_root(cloned_targets_root)

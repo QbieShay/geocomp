@@ -16,7 +16,7 @@ func find_targets():
 	print('Found ', targets.size(), ' targets')
 	for t in targets:
 		if t extends FinalTarget:
-			t.connect("target_hit", self, "on_final_target_hit")
+			t.connect("target_hit", self, "on_final_target_hit", [t])
 		else:
 			t.connect("target_hit", self, "on_target_hit", [t])
 
@@ -33,14 +33,15 @@ func on_target_hit(distance, target):
 func calc_score(distance):
 	return max(0, 100 - distance * distance / 45)
 	
-func on_final_target_hit(distance):
+func on_final_target_hit(distance, target):
+	on_target_hit(distance, target)
 #	print('final target')
 	var chara = game.chara
 #	print('game: ', game, ', targets: ', targets, ' chara: ', chara)
 	if chara:
 		chara.set_linear_velocity(Vector2())
 		chara.set_sleeping(true)
-	if targets.size() > 1:
+	if targets.size() > 0:
 		# Not all targets were hit: game over
 		game.game_over()
 	else:
