@@ -6,8 +6,8 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 12.9028
-height = 24.0384
+radius = 13.0
+height = 25.0
 
 [node name="Booster" type="Area2D"]
 
