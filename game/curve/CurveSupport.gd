@@ -36,8 +36,8 @@ func add_curve(n_points):
 	if curve and !curve.is_queued_for_deletion():
 		return false
 	self.curve = CurveNode.instance()
-	curve.init_with_points(n_points, 2 * size.x - 10)
-	curve.set_pos(-Vector2(size.x - 5, 0))
+	curve.init_with_points(n_points, 2 * size.x)
+	curve.set_pos(-Vector2(size.x, 0))
 	curve.freeze_extremes()
 	add_child(curve)
 	return true
