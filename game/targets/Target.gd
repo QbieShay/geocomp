@@ -19,7 +19,7 @@ func _process(delta):
 	sprite.set_rot(0.1 * sin(4 * t))
 	
 func on_body_enter(body):
-	if !body extends Character:
+	if !(body extends Character):
 		return
 	var fx = TakenFXScene.instance()
 	fx.set_pos(get_pos())

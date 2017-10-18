@@ -28,9 +28,7 @@ func load_level(n):
 	
 	# Setup targets and game
 	game.set_targets_root(get_node("./Level" + str(n) + "/Targets"))
-	targets_manager.find_targets()
 	var spawn = get_node('./Level' + str(n) + '/SpawnPoint')
 	assert(spawn)
 	game.spawn = spawn
 	game.reset_level()
-	

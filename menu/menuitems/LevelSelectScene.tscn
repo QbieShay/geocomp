@@ -18,9 +18,9 @@ script/script = ExtResource( 2 )
 [node name="Preview" parent="."]
 
 margin/left = 229.0
-margin/top = 57.0
+margin/top = 59.0
 margin/right = 234.0
-margin/bottom = 221.0
+margin/bottom = 219.0
 
 [node name="Label" type="Label" parent="."]
 
@@ -36,7 +36,7 @@ margin/right = 190.0
 margin/bottom = 126.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.0546875, 0, 1, 1 )
-text = "BEST SCORE: TUA MAMMA 3123"
+text = "BEST SCORE: 3123"
 align = 1
 valign = 1
 autowrap = true
