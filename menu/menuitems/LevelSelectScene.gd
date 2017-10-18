@@ -3,7 +3,7 @@ extends Container
 const LevelSelectButton = preload("LevelSelectButton.gd")
 
 func _ready():
-	var container = get_node("ButtonsContainer")
+	var container = get_node("ButtonGroup/ButtonsContainer")
 	for i in range(5):
 		var lvl = LevelSelectButton.new()
 		lvl.idx = i + 1

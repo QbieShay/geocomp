@@ -34,7 +34,7 @@ expand = true
 stretch_mode = 6
 script/script = ExtResource( 2 )
 
-[node name="ButtonsContainer" type="HBoxContainer" parent="."]
+[node name="ButtonGroup" type="ButtonGroup" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -44,6 +44,18 @@ margin/left = 344.0
 margin/top = 479.0
 margin/right = 680.0
 margin/bottom = 543.0
+alignment = 0
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="ButtonGroup"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 336.0
+margin/bottom = 0.0
 alignment = 0
 
 
