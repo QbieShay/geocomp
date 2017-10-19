@@ -13,7 +13,7 @@ var chara
 var orig_targets_root
 var cloned_targets_root
 var spawn
-var score_mager
+var score_manager
 
 onready var root = get_node(Utils.name_from_root())
 
@@ -21,7 +21,7 @@ func _ready():
 	set_process_input(true)
 	set_fixed_process(true)
 	score_manager = ScoreManager.new()
-	add_child(score_mager)
+	add_child(score_manager)
 	
 func _fixed_process(delta):
 	if started and chara.get_pos().y > get_viewport_rect().size.height * 1.2:
@@ -41,7 +41,7 @@ func win():
 	var lvl_num = get_node("..").level_num
 	var gameui = get_node("../Level"+str(lvl_num)+"/GameUILayer/GameUI")
 	assert(gameui)
-	gameui.win(0)
+	gameui.win(score_manager.score)
 	
 func start_level():
 		chara = CharacterNode.instance()
@@ -65,6 +65,7 @@ func reset_level():
 	set_control_points_enabled(true)
 	set_supports_visible(true)
 	reset_targets()
+	score_manager.set_score(0)
 	set_spawn_visible(true)
 	started = false
 	

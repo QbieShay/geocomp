@@ -22,7 +22,7 @@ func find_targets():
 
 	
 func on_target_hit(distance, target):
-	var score = calc_score(distance)
+	game.score_manager.add_score(calc_score(distance))
 #	print(distance, " ", score)
 	# Destroy the target
 	var idx = targets.find(target)

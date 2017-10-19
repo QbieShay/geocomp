@@ -8,7 +8,7 @@ func _ready():
 	pass
 
 func show_score(score):
-	get_node("ScoreLabel").set_text("YOUR SCORE: "+str(score))
+	get_node("ScoreLabel").set_text("YOUR SCORE: "+str(int(score)))
 	show()
 
 func _on_ResetButton_pressed():
