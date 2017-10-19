@@ -5,6 +5,8 @@ const FinalTarget = preload('FinalTarget.gd')
 const Utils = preload('res://Utils.gd')
 #const Character = preload('../character/Character.gd')
 
+const STAR_SCORE = 150
+
 var targets = []
 
 onready var game = get_node('..').game
@@ -23,8 +25,13 @@ func find_targets():
 	
 func on_target_hit(distance, target):
 	game.score_manager.add_score(calc_score(distance))
-#	print(distance, " ", score)
-	# Destroy the target
+	destroy_target(target)
+	
+func on_star_hit(star):
+	game.score_manager.add_score(STAR_SCORE)
+	star.queue_free()
+	
+func destroy_target(target):
 	var idx = targets.find(target)
 	assert(idx >= 0)
 	targets.remove(idx)
