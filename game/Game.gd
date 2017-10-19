@@ -6,18 +6,22 @@ const ControlPoint = preload('curve/ControlPoint.gd')
 const CurveSupport = preload('curve/CurveSupport.gd')
 const CharacterNode = preload('character/Character.tscn')
 const Utils = preload('res://Utils.gd')
+const ScoreManager = preload('ScoreManager.gd')
 
 var started = false 
 var chara
 var orig_targets_root
 var cloned_targets_root
 var spawn
+var score_mager
 
 onready var root = get_node(Utils.name_from_root())
 
 func _ready():
 	set_process_input(true)
 	set_fixed_process(true)
+	score_manager = ScoreManager.new()
+	add_child(score_mager)
 	
 func _fixed_process(delta):
 	if started and chara.get_pos().y > get_viewport_rect().size.height * 1.2:
