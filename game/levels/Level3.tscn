@@ -54,6 +54,6 @@ transform/pos = Vector2( 483.179, 341.878 )
 
 [node name="Area2D" parent="." instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 354.051, 190.193 )
+transform/pos = Vector2( 889.494, 212.834 )
 
 

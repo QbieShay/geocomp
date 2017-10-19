@@ -1,6 +1,7 @@
 extends Node
 
 const Target = preload('Target.gd')
+const Star = preload('Star.gd')
 const FinalTarget = preload('FinalTarget.gd')
 const Utils = preload('res://Utils.gd')
 #const Character = preload('../character/Character.gd')
@@ -21,7 +22,10 @@ func find_targets():
 			t.connect("target_hit", self, "on_final_target_hit", [t])
 		else:
 			t.connect("target_hit", self, "on_target_hit", [t])
-
+	var stars = Utils.find_all_nodes(Star, root)
+	print('Found ', stars.size(), ' stars')
+	for s in stars:
+		s.connect("star_hit", self, "on_star_hit", [s])
 	
 func on_target_hit(distance, target):
 	game.score_manager.add_score(calc_score(distance))

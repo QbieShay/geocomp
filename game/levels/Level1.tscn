@@ -3,8 +3,8 @@
 [ext_resource path="res://game/levels/LevelBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/targets/Target.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/targets/FinalTarget.tscn" type="PackedScene" id=3]
-[ext_resource path="res://game/curve/CurveSupport.tscn" type="PackedScene" id=4]
-[ext_resource path="res://game/targets/Star.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/targets/Star.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/curve/CurveSupport.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/character/SpawnPoint.tscn" type="PackedScene" id=6]
 
 [node name="Level1" instance=ExtResource( 1 )]
@@ -25,21 +25,21 @@ transform/pos = Vector2( 605.177, 405.623 )
 
 transform/pos = Vector2( 964.913, 509.34 )
 
-[node name="CurveSupport" parent="Segments" instance=ExtResource( 4 )]
+[node name="Area2D" parent="Targets" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 475.997, 469.411 )
+
+[node name="CurveSupport" parent="Segments" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 210.484, 312.089 )
 transform/rot = -35.8319
 transform/scale = Vector2( 4.89759, 1.34383 )
 
-[node name="CurveSupport1" parent="Segments" instance=ExtResource( 4 )]
+[node name="CurveSupport1" parent="Segments" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 717.21, 516.774 )
 transform/rot = -7.87324
 transform/scale = Vector2( 4.61855, 1.25972 )
-
-[node name="Area2D" parent="Stars" instance=ExtResource( 5 )]
-
-transform/pos = Vector2( 473.601, 474.798 )
 
 [node name="SpawnPoint" parent="." instance=ExtResource( 6 )]
 
