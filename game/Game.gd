@@ -37,30 +37,32 @@ func game_over():
 #	reset_level()
 	
 func win():
-	#FIXME SENPAI
 	var lvl_num = get_node("..").level_num
 	var gameui = get_node("../Level"+str(lvl_num)+"/GameUILayer/GameUI")
 	assert(gameui)
 	gameui.win(score_manager.score)
 	
 func start_level():
-		chara = CharacterNode.instance()
-		chara.set_name('Character')
-		assert(spawn)
-		chara.set_pos(spawn.get_pos())
-		add_child(chara)
-		started = true
-		make_curves_solid()
-		set_control_points_enabled(false)
-		set_curve_gizmos_visible(false)
-		set_supports_visible(false)
-		set_spawn_visible(false)
+	if chara:
+		return
+	chara = CharacterNode.instance()
+	chara.set_name('Character')
+	assert(spawn)
+	chara.set_pos(spawn.get_pos())
+	add_child(chara)
+	started = true
+	make_curves_solid()
+	set_control_points_enabled(false)
+	set_curve_gizmos_visible(false)
+	set_supports_visible(false)
+	set_spawn_visible(false)
 
 func reset_level():
 	if chara:
 		var wch = weakref(chara)
 		if wch.get_ref():
 			chara.queue_free()
+		chara = null
 	set_curve_gizmos_visible(true)
 	set_control_points_enabled(true)
 	set_supports_visible(true)
@@ -104,11 +106,12 @@ func set_supports_visible(v):
 func set_targets_root(node):
 	orig_targets_root = node
 	cloned_targets_root = node.duplicate()
-#	breakpoint
 	
 func reset_targets():
 	var level = get_parent().cur_loaded_level
 	assert(level)
+	assert(orig_targets_root)
+	level.remove_child(orig_targets_root)
 	orig_targets_root.queue_free()
 	level.add_child(cloned_targets_root)
 	level.get_parent().targets_manager.find_targets()

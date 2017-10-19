@@ -14,6 +14,7 @@ func _ready():
 		Vector2(0, 0.5)
 	])
 	colors = ColorArray([Color(1, 0, 0), Color(1, 0, 0), Color(1, 0, 0)])
+	get_node('Sprite').hide() # Sprite is only needed as editor gizmo
 	set_process(true)
 	
 func _process(delta):
