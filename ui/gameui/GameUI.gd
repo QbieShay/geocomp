@@ -69,6 +69,9 @@ func spawn_mouse_tip(caller, type):
 func _on_ResetButton_pressed():
 	game.reset_level()
 
+func game_over(missed_targets):
+	assert(get_node("Popup"))
+	get_node("Popup").show_lost(missed_targets)
 
 func _on_PlayButton_pressed():
 	game.start_level()

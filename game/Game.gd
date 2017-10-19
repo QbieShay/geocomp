@@ -22,18 +22,24 @@ func _ready():
 	set_fixed_process(true)
 	score_manager = ScoreManager.new()
 	add_child(score_manager)
+
 	
 func _fixed_process(delta):
 	if started and chara.get_pos().y > get_viewport_rect().size.height * 1.2:
-		game_over()
+		var level = get_parent().cur_loaded_level
+		game_over(level.get_parent().targets_manager.targets.size())
 	
 func _input(event):
 	if event.is_action_pressed("ui_start") and not started:
 		start_level()
 
-func game_over():
-	# TODO
-	print('GAME OVER!')
+func game_over(missed_targets):
+	var lvl_num = get_node("..").level_num
+	var gameui = get_node("../Level"+str(lvl_num)+"/GameUILayer/GameUI")
+	assert(gameui)
+	print("Game over")
+	gameui.game_over(missed_targets)
+	
 #	reset_level()
 	
 func win():

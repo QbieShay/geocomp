@@ -54,6 +54,6 @@ func on_final_target_hit(distance, target):
 		chara.set_sleeping(true)
 	if targets.size() > 0:
 		# Not all targets were hit: game over
-		game.game_over()
+		game.game_over(targets.size())
 	else:
 		game.win()
