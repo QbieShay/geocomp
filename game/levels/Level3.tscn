@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://game/levels/LevelBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/targets/Target.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/targets/FinalTarget.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/curve/CurveSupport.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/character/SpawnPoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/targets/Booster.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/targets/Star.tscn" type="PackedScene" id=7]
 
 [node name="Level3" instance=ExtResource( 1 )]
 
@@ -45,5 +47,13 @@ transform/scale = Vector2( 5.76611, 1 )
 [node name="SpawnPoint" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 45.1777, 106.023 )
+
+[node name="Booster" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 483.179, 341.878 )
+
+[node name="Area2D" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 354.051, 190.193 )
 
 

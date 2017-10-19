@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://game/targets/star.png" type="Texture" id=1]
+[ext_resource path="res://game/img/star.png" type="Texture" id=1]
 [ext_resource path="res://game/targets/TargetTakenFX.gd" type="Script" id=2]
 
 [sub_resource type="ColorRamp" id=1]
