@@ -1,6 +1,8 @@
 extends Area2D
 
 const Character = preload('res://game/character/Character.gd')
+const BoosterFXScene = preload('BoosterTakenFX.tscn')
+
 const BOOST = 200
 const RADIUS = 40
 
@@ -25,7 +27,10 @@ func _draw():
 	
 func on_body_enter(body):
 	if !(body extends Character):
-		return
+		return	
+	var fx = BoosterFXScene.instance()
+	fx.set_pos(get_pos())
+	get_parent().add_child(fx)
 	add_boost(body)
 	
 func add_boost(body):
