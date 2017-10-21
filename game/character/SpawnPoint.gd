@@ -1,5 +1,7 @@
 extends CanvasItem
 
+const COLOR = Color(1, 0.08, 1)
+
 export (Font) var font
 
 var triangle
@@ -13,7 +15,7 @@ func _ready():
 		Vector2(0.5, -0.5),
 		Vector2(0, 0.5)
 	])
-	colors = ColorArray([Color(1, 0, 0), Color(1, 0, 0), Color(1, 0, 0)])
+	colors = ColorArray([COLOR, COLOR, COLOR])
 	get_node('Sprite').hide() # Sprite is only needed as editor gizmo
 	set_process(true)
 	
@@ -24,7 +26,7 @@ func _process(delta):
 	
 func _draw():
 	draw_set_transform(Vector2(), 0, Vector2(1, 1))
-	draw_circle(Vector2(), 8, Color(1, 0, 0))
-	draw_string(font, Vector2(16, 7), "START", Color(1, 0, 0))
+	draw_circle(Vector2(), 8, COLOR)
+	draw_string(font, Vector2(16, 7), "START", COLOR)
 	draw_set_transform(Vector2(0, -40 + y), 0, Vector2(20, 20))
 	draw_primitive(triangle, colors, Vector2Array([]))

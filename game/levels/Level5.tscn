@@ -5,82 +5,79 @@
 [ext_resource path="res://game/targets/FinalTarget.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/targets/Star.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/curve/CurveSupport.tscn" type="PackedScene" id=5]
-[ext_resource path="res://game/targets/Booster.tscn" type="PackedScene" id=6]
-[ext_resource path="res://game/character/SpawnPoint.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/character/SpawnPoint.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/targets/Booster.tscn" type="PackedScene" id=7]
 
 [node name="Level5" instance=ExtResource( 1 )]
 
 [node name="GameUI" parent="GameUILayer"]
 
 n_1_splines = 2
-n_2_splines = 2
+n_2_splines = 1
+n_3_splines = 1
 
 [node name="Target" parent="Targets" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 222.36, 451.236 )
+transform/pos = Vector2( 510.994, 213.858 )
 
 [node name="Target1" parent="Targets" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 362.455, 403.994 )
+transform/pos = Vector2( 304.914, 174.725 )
 
 [node name="Target2" parent="Targets" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 564.452, 300.552 )
+transform/pos = Vector2( 693.834, 330.792 )
 
 [node name="Target3" parent="Targets" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 719.208, 210.142 )
+transform/pos = Vector2( 434.579, 499.348 )
 
 [node name="FinalTarget" parent="Targets" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 707.805, 488.703 )
+transform/pos = Vector2( 93.4975, 459.626 )
 
 [node name="Star" parent="Targets" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 927.256, 165.35 )
+transform/pos = Vector2( 225.723, 152.079 )
 
 [node name="Star1" parent="Targets" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 815.942, 375.55 )
+transform/pos = Vector2( 781.35, 286.196 )
 
 [node name="CurveSupport" parent="Segments" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 162.51, 520.13 )
-transform/rot = -11.4162
-transform/scale = Vector2( 3.34055, 1 )
+transform/pos = Vector2( 724.79, 186.806 )
+transform/rot = 19.6655
+transform/scale = Vector2( 2.95587, 1 )
 
 [node name="CurveSupport1" parent="Segments" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 566.321, 367.545 )
-transform/rot = 29.9686
-transform/scale = Vector2( 4.45122, 1 )
+transform/pos = Vector2( 298.883, 259.483 )
+transform/rot = -15.0978
+transform/scale = Vector2( 3.20548, 1 )
 
 [node name="CurveSupport2" parent="Segments" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 958.078, 228.559 )
-transform/rot = 93.7582
-transform/scale = Vector2( 2.70926, 1 )
+transform/pos = Vector2( 803.475, 409.853 )
+transform/rot = 26.6686
+transform/scale = Vector2( 3.49321, 1 )
 
 [node name="CurveSupport3" parent="Segments" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 654.107, 543.39 )
-transform/rot = 181.472
-transform/scale = Vector2( 1.85552, 1 )
+transform/pos = Vector2( 332.301, 542.774 )
+transform/rot = 1.58759
+transform/scale = Vector2( 4.01162, 1 )
 
-[node name="Booster" parent="." instance=ExtResource( 6 )]
+[node name="SpawnPoint" parent="." instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 140.909, 472.413 )
+transform/pos = Vector2( 820.258, 35.968 )
 
-[node name="Booster1" parent="." instance=ExtResource( 6 )]
+[node name="Booster" parent="." instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 466.711, 366.527 )
+transform/pos = Vector2( 233.902, 487.068 )
 
-[node name="Booster2" parent="." instance=ExtResource( 6 )]
+[node name="Booster1" parent="." instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 659.749, 238.65 )
-
-[node name="SpawnPoint" parent="." instance=ExtResource( 7 )]
-
-transform/pos = Vector2( 76.5634, 333.132 )
+transform/pos = Vector2( 616.726, 220.31 )
 
 
