@@ -3,6 +3,8 @@ extends Node
 const Game = preload('Game.gd')
 const TargetsManager = preload('targets/TargetsManager.gd')
 
+const N_LEVELS = 5
+
 var game
 var targets_manager
 var cur_loaded_level

@@ -1,14 +1,27 @@
 extends Node
 
-const Utils = preload('res://Utils.gd')
-const DragManagerSingleton = preload('DragManagerSingleton.gd')
+const ControlPoint = preload('curve/ControlPoint.gd')
 
-static func get_instance(node):
-	var inst = node.get_node(Utils.name_from_root('nodemanager'))
-	if inst:
-		assert(inst extends DragManagerSingleton)
-		return inst
-	inst = DragManagerSingleton.new()
-	inst.set_name('nodemanager')
-	node.get_node(Utils.name_from_root()).add_child(inst, true)
-	return inst
+var dragged = []
+
+func add_dragged(point):
+	assert(point extends ControlPoint)
+	if !dragged.has(point):
+		dragged.append(point)
+	
+func remove_dragged(point):
+	var idx = dragged.find(point)
+	if idx >= 0:
+		dragged.remove(idx)
+	
+func check_dragged(point):
+	if !dragged.has(point):
+		return false
+	if dragged.size() == 1:
+		# Only point being dragged
+		return true
+	for pt in dragged:
+		if int(pt.type) >= int(point.type):
+			remove_dragged(point)
+			return false
+	return true

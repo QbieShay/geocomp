@@ -1,6 +1,7 @@
 extends Node2D
 
-const DragManager = preload('../DragManager.gd')
+const DragManager = preload('res://game/DragManager.gd')
+const Utils = preload('res://Utils.gd')
 
 signal position_changed
 
@@ -16,13 +17,17 @@ var dragging = false
 var type = PointType.KNOT
 var knot # The knot this Control Point belongs to (null if is itself a knot)
 var anchor_pos
+var drag_manager
 
 onready var initial_pos = get_global_pos()
-onready var drag_manager = DragManager.get_instance(self)
 
 func _ready():
 	set_process_input(true)
 	set_fixed_process(true)
+	var game = get_node(Utils.name_from_root('Level')).game
+	assert(game)
+	drag_manager = game.drag_manager
+	assert(drag_manager)
 	
 func _fixed_process(delta):
 	anchor_pos = initial_pos if type == PointType.KNOT else knot.get_global_pos()

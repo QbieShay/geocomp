@@ -11,6 +11,7 @@ const STAR_SCORE = 150
 var targets = []
 
 onready var game = get_node('..').game
+onready var score_manager = get_node(Utils.name_from_root('ScoreManager'))
 
 func find_targets():
 	targets.clear()
@@ -28,11 +29,11 @@ func find_targets():
 		s.connect("star_hit", self, "on_star_hit", [s])
 	
 func on_target_hit(distance, target):
-	game.score_manager.add_score(calc_score(distance))
+	score_manager.add_score(calc_score(distance))
 	destroy_target(target)
 	
 func on_star_hit(star):
-	game.score_manager.add_score(STAR_SCORE)
+	score_manager.add_score(STAR_SCORE)
 	star.queue_free()
 	
 func destroy_target(target):

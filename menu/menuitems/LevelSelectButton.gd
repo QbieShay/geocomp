@@ -1,7 +1,9 @@
 extends 'PreviewButton.gd'
 
 const Utils = preload('res://Utils.gd')
-	
+
+onready var label = get_node('../../../Label')
+
 func _ready():
 	connect('pressed', self, 'on_click')
 	connect('mouse_enter', self, 'on_hover')	
@@ -12,6 +14,7 @@ func on_click():
 
 func on_hover():
 	preview.set_preview(preview_image)
+	label.update_label(idx - 1)
 		
 func set_idx(i):
 	.set_idx(i)

@@ -3,6 +3,8 @@ extends Area2D
 const Character = preload('../character/Character.gd')
 const TakenFXScene = preload('TargetTakenFX.tscn')
 
+const COLOR = Color(1, 0.32, 0.32)
+
 signal target_hit(distance)
 
 var t = rand_range(0, 2 * PI)
@@ -12,6 +14,7 @@ onready var sprite = get_node('Sprite')
 func _ready():
 	connect("body_enter", self, "on_body_enter")
 	set_process(true)
+	sprite.set_modulate(COLOR)
 	
 func _process(delta):
 	t += delta * rand_range(0.7, 1.3)

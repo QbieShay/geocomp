@@ -1,6 +1,6 @@
 extends CanvasItem
 
-const COLOR = Color(1, 0.08, 1)
+const COLOR = Color(1, 0.32, 0.32)
 
 export (Font) var font
 

@@ -17,7 +17,7 @@ var container
 onready var game = get_node(Utils.name_from_root('Level')).game
 
 func load_imgs():
-	for i in range (3):
+	for i in range(3):
 		var img = ImageTexture.new()
 		img.load("res://ui/gameui/img/Spline" + str(i+1) + "_Active.png")
 		normals.append(img)

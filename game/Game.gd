@@ -6,24 +6,22 @@ const ControlPoint = preload('curve/ControlPoint.gd')
 const CurveSupport = preload('curve/CurveSupport.gd')
 const CharacterNode = preload('character/Character.tscn')
 const Utils = preload('res://Utils.gd')
-const ScoreManager = preload('ScoreManager.gd')
+const DragManager = preload('DragManager.gd')
 
 var started = false 
 var chara
 var orig_targets_root
 var cloned_targets_root
 var spawn
-var score_manager
 
 onready var root = get_node(Utils.name_from_root())
+onready var drag_manager = DragManager.new()
+onready var score_manager = get_node(Utils.name_from_root('ScoreManager'))
 
 func _ready():
 	set_process_input(true)
 	set_fixed_process(true)
-	score_manager = ScoreManager.new()
-	add_child(score_manager)
 
-	
 func _fixed_process(delta):
 	if started and chara.get_pos().y > get_viewport_rect().size.height * 1.2:
 		var level = get_parent().cur_loaded_level
@@ -47,6 +45,7 @@ func win():
 	var gameui = get_node("../Level"+str(lvl_num)+"/GameUILayer/GameUI")
 	assert(gameui)
 	gameui.win(score_manager.score)
+	score_manager.save_score()
 	
 func start_level():
 	if chara:

@@ -32,15 +32,17 @@ n_3_splines = 0
 
 anchor/left = 0
 anchor/right = 0
-margin/left = 70.0
-margin/top = 3.0
-margin/right = 102.0
-margin/bottom = 44.0
+margin/left = 78.0
+margin/top = 6.0
+margin/right = 110.0
+margin/bottom = 47.0
 
 [node name="BackButton" parent="." instance=ExtResource( 3 )]
 
-margin/right = 64.0
-margin/bottom = 64.0
+margin/left = 6.0
+margin/top = 6.0
+margin/right = 70.0
+margin/bottom = 70.0
 
 [node name="PlayButton" type="TextureButton" parent="."]
 
@@ -50,10 +52,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 134.0
-margin/top = 3.0
-margin/right = 70.0
-margin/bottom = 68.0
+margin/left = 137.0
+margin/top = 6.0
+margin/right = 73.0
+margin/bottom = 71.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -71,10 +73,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 69.0
-margin/top = 1.0
-margin/right = 5.0
-margin/bottom = 65.0
+margin/left = 72.0
+margin/top = 6.0
+margin/right = 8.0
+margin/bottom = 70.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
