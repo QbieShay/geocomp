@@ -185,4 +185,4 @@ func set_glowing(g):
 		update()
 		
 func make_solid():
-	collider.set_points(curve.tesselate(6, 15))
+	collider.set_points(curve.tesselate(6, 7))
