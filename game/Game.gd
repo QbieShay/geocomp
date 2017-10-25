@@ -32,10 +32,11 @@ func _input(event):
 		start_level()
 
 func game_over(missed_targets):
+	if missed_targets == 0:
+		return # Spurious game over
 	var lvl_num = get_node("..").level_num
 	var gameui = get_node("../Level"+str(lvl_num)+"/GameUILayer/GameUI")
 	assert(gameui)
-	print("Game over")
 	gameui.game_over(missed_targets)
 	
 #	reset_level()
