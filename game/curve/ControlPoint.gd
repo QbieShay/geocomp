@@ -31,8 +31,11 @@ func _ready():
 	
 func _fixed_process(delta):
 	anchor_pos = initial_pos if type == PointType.KNOT else knot.get_global_pos()
+	var vpsize = get_viewport().get_rect()
 	if dragging:
 		var mpos = get_global_mouse_pos()
+		if mpos.x < 0 or mpos.y < 0 or mpos.x > vpsize.size.x or mpos.y > vpsize.size.y:
+			return
 		var r = mpos - anchor_pos
 		if r.length() > max_dist_from_initial_pos:
 			set_global_pos(anchor_pos + r.normalized() * max_dist_from_initial_pos)
