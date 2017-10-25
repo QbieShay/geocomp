@@ -19,7 +19,7 @@ transform/pos = Vector2( 135.208, 302.996 )
 
 [node name="Target1" parent="Targets" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 605.177, 405.623 )
+transform/pos = Vector2( 525.288, 423.711 )
 
 [node name="FinalTarget" parent="Targets" instance=ExtResource( 3 )]
 
@@ -27,7 +27,7 @@ transform/pos = Vector2( 964.913, 509.34 )
 
 [node name="Star" parent="Targets" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 475.997, 469.411 )
+transform/pos = Vector2( 622.209, 412.132 )
 
 [node name="CurveSupport" parent="Segments" instance=ExtResource( 5 )]
 
