@@ -12,36 +12,33 @@
 
 [node name="GameUI" parent="GameUILayer"]
 
+margin/left = -1.0
+margin/top = 1.0
+margin/right = 1.0
+margin/bottom = -1.0
 n_1_splines = 1
-n_2_splines = 1
 
 [node name="Target" parent="Targets" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 143.63, 201.301 )
-
-[node name="Target3" parent="Targets" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 675.345, 401.717 )
+transform/pos = Vector2( 260.622, 447.529 )
 
 [node name="FinalTarget" parent="Targets" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 502.109, 505.751 )
+transform/pos = Vector2( 851.725, 444.534 )
 
 [node name="Star1" parent="Targets" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 647.123, 174.364 )
+transform/pos = Vector2( 521.969, 187.968 )
+
+[node name="Star2" parent="Targets" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 772.277, 338.969 )
 
 [node name="CurveSupport" parent="Segments" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 268.857, 228.896 )
+transform/pos = Vector2( 207.407, 372.874 )
 transform/rot = -16.9456
-transform/scale = Vector2( 4.52092, 1 )
-
-[node name="CurveSupport2" parent="Segments" instance=ExtResource( 5 )]
-
-transform/pos = Vector2( 681.834, 376.689 )
-transform/rot = 43.7059
-transform/scale = Vector2( 4.87847, 1 )
+transform/scale = Vector2( 3.64262, 1 )
 
 [node name="SpawnPoint" parent="." instance=ExtResource( 6 )]
 
@@ -49,6 +46,6 @@ transform/pos = Vector2( 52.1283, 129.796 )
 
 [node name="Booster" parent="." instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 420.091, 292.547 )
+transform/pos = Vector2( 352.559, 429.981 )
 
 

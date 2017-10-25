@@ -52,7 +52,7 @@ func on_final_target_hit(distance, target):
 #	print('game: ', game, ', targets: ', targets, ' chara: ', chara)
 	if chara:
 		chara.set_linear_velocity(Vector2())
-		chara.set_sleeping(true)
+		chara.set_mode(RigidBody.MODE_STATIC)
 	if targets.size() > 0:
 		# Not all targets were hit: game over
 		game.game_over(targets.size())
