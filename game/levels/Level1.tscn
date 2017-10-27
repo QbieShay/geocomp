@@ -41,11 +41,6 @@ transform/pos = Vector2( 717.21, 516.774 )
 transform/rot = -7.87324
 transform/scale = Vector2( 4.61855, 1.25972 )
 
-[node name="CurveSupport 2" parent="Segments" instance=ExtResource( 5 )]
-
-transform/pos = Vector2( 526.18, 131.944 )
-transform/scale = Vector2( 2.98562, 1 )
-
 [node name="SpawnPoint" parent="." instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 50.7213, 122.76 )
