@@ -3,9 +3,10 @@ extends Node
 const ControlPointNode = preload('ControlPoint.tscn')
 const ControlPoint = preload('ControlPoint.gd')
 const BezierColliderNode = preload('BezierCollider.tscn')
+const Utils = preload('res://Utils.gd')
 
 var point_radius = 10.0
-var curve_thickness = 20.0
+var curve_thickness = 4.0
 var curve_color = Color(1, 1, 1, 1)
 var point_color = Color(1, 1, 0.5, 1)
 var point_in_color = Color(1, 0.5, 1, 1)
@@ -91,9 +92,9 @@ func _draw():
 	# Draw the curve
 	var start = Vector2()
 	for point in curve.get_baked_points():
-		draw_line(start, point, curve_color, curve_thickness)
+		Utils.m_draw_line(self, start, point, curve_color, curve_thickness)
 		if glowing:
-			draw_line(start, point, Color(glow_color.r, glow_color.g, glow_color.b, alpha), 2 * curve_thickness)
+			Utils.m_draw_line(self, start, point, Color(glow_color.r, glow_color.g, glow_color.b, alpha), 2 * curve_thickness)
 			#draw_rect(Rect2(Vector2(start) - Vector2(5, 5), Vector2(10, 10)), Color(0.1, 0.9, 0.1, alpha))
 		start = point
 	
@@ -105,17 +106,17 @@ func _draw():
 		var pos = curve.get_point_pos(i)
 		var p_in = pos + curve.get_point_in(i)
 		if connect_in_out and p_out != null:
-			draw_line(p_out, p_in, polygon_color, polygon_thickness)
+			Utils.m_draw_line_p(self, p_out, p_in, polygon_color, polygon_thickness)
 		p_out = pos + curve.get_point_out(i)
 		
 		add_circle(pos, point_radius, point_color)
 		if i > 0:
 			add_circle(p_in, point_radius, point_in_color)
-			draw_line(pos, p_in, polygon_color, polygon_thickness)
+			Utils.m_draw_line_p(self, pos, p_in, polygon_color, polygon_thickness)
 
 		if i < curve.get_point_count() - 1:
-			add_circle(p_out, point_radius , point_out_color)
-			draw_line(pos, p_out, polygon_color, polygon_thickness)
+			add_circle(p_out, point_radius, point_out_color)
+			Utils.m_draw_line_p(self, pos, p_out, polygon_color, polygon_thickness)
 
 func add_circle(pos, radius, color):
 	var scale = get_global_scale()

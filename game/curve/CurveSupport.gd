@@ -2,6 +2,7 @@ extends Area2D
 
 const CurveNode = preload('Curve.tscn')
 const MouseFollowSpline = preload('../../ui/gameui/MouseFollowSpline.gd')
+const Utils = preload('res://Utils.gd')
 
 var size = Vector2()
 var curve setget set_curve
@@ -9,6 +10,7 @@ var highlighted = false setget set_highlighted
 var alpha = 0.5
 var visible = true
 var glowing = false setget set_glowing
+var line_thickness = 2
 
 func _ready():
 	var shape = get_node('CollisionShape2D')
@@ -21,7 +23,7 @@ func _draw():
 		return
 	var scale = get_global_scale()
 	if !curve:
-		draw_line(-Vector2(size.x, 0), Vector2(size.x, 0), Color(0.8, 0.8, 0.2), 5)
+		Utils.m_draw_line(self, -Vector2(size.x, 0), Vector2(size.x, 0), Color(0.8, 0.8, 0.2), line_thickness)
 		# Prevent stretching of the circles
 		draw_set_transform(Vector2(), 0, Vector2(1 / scale.x, 1 / scale.y))
 		draw_circle(-Vector2(size.x * scale.x, 0), 5 , Color(0.2, 0.9, 0.5))
