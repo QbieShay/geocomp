@@ -18,4 +18,5 @@ func on_hover():
 		
 func set_idx(i):
 	.set_idx(i)
+	get_node("Label").set_text(str(i))
 	preview_image = "res://menu/menuitems/img/level_preview/LevelPreview_" + str(idx - 1) + ".png"
