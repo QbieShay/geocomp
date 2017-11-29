@@ -71,6 +71,7 @@ transform/scale = Vector2( 4.01162, 1 )
 [node name="SpawnPoint" parent="." instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 820.258, 35.968 )
+invert_x = true
 
 [node name="Booster" parent="." instance=ExtResource( 7 )]
 

@@ -33,6 +33,8 @@ func _ready():
 	assert(drag_manager)
 	
 func _fixed_process(delta):
+	if !enabled:
+		return
 	anchor_pos = initial_pos if type == PointType.KNOT else knot.get_global_pos()
 	var vpsize = get_viewport().get_rect()
 	if dragging:
@@ -47,6 +49,8 @@ func _fixed_process(delta):
 		update()
 		
 func _input(event):
+	if !enabled:
+		return
 	if event.type != InputEvent.MOUSE_BUTTON:
 		return
 	if !event.pressed:

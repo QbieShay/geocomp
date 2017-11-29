@@ -3,6 +3,7 @@ extends CanvasItem
 const COLOR = Color(1, 0.32, 0.32)
 
 export (Font) var font
+export var invert_x = false
 
 var triangle
 var colors
