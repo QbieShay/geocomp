@@ -55,6 +55,8 @@ func start_level():
 	chara.set_name('Character')
 	assert(spawn)
 	chara.set_pos(spawn.get_pos())
+	if spawn.invert_x:
+		chara.get_node("Sprite").scale(Vector2(-1, 1))
 	add_child(chara)
 	started = true
 	make_curves_solid()
