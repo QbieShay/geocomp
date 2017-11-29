@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://sounds/boost.wav" type="Sample" id=1]
+[ext_resource path="res://sounds/gate.wav" type="Sample" id=2]
+[ext_resource path="res://sounds/star.wav" type="Sample" id=3]
+
+[sub_resource type="SampleLibrary" id=1]
+
+samples/boost = {
+"db": 0.2,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 1 )
+}
+samples/gate = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 2 )
+}
+samples/star = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 3 )
+}
+
+[node name="SoundPlayer" type="SamplePlayer2D"]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 4
+config/samples = SubResource( 1 )
+config/pitch_random = 0.0
+
+

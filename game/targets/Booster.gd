@@ -2,11 +2,14 @@ extends Area2D
 
 const Character = preload('res://game/character/Character.gd')
 const BoosterFXScene = preload('BoosterTakenFX.tscn')
+const Utils = preload('res://Utils.gd')
 
 const BOOST = 200
 const RADIUS = 40
 
 var t = rand_range(0, 2 * PI)
+
+onready var sound_player = get_node(Utils.name_from_root("SoundPlayer"))
 
 func _ready():
 	connect("body_enter", self, "on_body_enter")
@@ -31,6 +34,7 @@ func on_body_enter(body):
 	var fx = BoosterFXScene.instance()
 	fx.set_pos(get_pos())
 	get_parent().add_child(fx)
+	sound_player.play("boost")
 	add_boost(body)
 	
 func add_boost(body):

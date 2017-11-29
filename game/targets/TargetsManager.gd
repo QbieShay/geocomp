@@ -12,6 +12,7 @@ var targets = []
 
 onready var game = get_node('..').game
 onready var score_manager = get_node(Utils.name_from_root('ScoreManager'))
+onready var sound_player = get_node(Utils.name_from_root("SoundPlayer"))
 
 func find_targets():
 	targets.clear()
@@ -30,10 +31,12 @@ func find_targets():
 	
 func on_target_hit(distance, target):
 	score_manager.add_score(calc_score(distance))
+	sound_player.play("gate")
 	destroy_target(target)
 	
 func on_star_hit(star):
 	score_manager.add_score(STAR_SCORE)
+	sound_player.play("star")
 	star.queue_free()
 	
 func destroy_target(target):

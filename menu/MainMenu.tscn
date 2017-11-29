@@ -80,4 +80,34 @@ textures/pressed = ExtResource( 9 )
 textures/hover = ExtResource( 10 )
 scene_to_load = "res://menu/menuitems/TheoryScene.tscn"
 
+[node name="RichTextLabel" type="Label" parent="Container"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 5.0
+margin/top = 559.0
+margin/right = 313.0
+margin/bottom = 578.0
+text = "Developed by Ilaria Cislaghi & Giacomo Parolini"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="RichTextLabel1" type="Label" parent="Container"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 5.0
+margin/top = 580.0
+margin/right = 371.0
+margin/bottom = 599.0
+text = "Music by http://freemusicarchive.org/music/Dee_Yan-Key"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 
