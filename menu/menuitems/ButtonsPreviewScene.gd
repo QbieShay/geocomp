@@ -1,5 +1,8 @@
 extends Container
 
+func _ready():
+	get_node("BackButton").set_default_cursor_shape(CURSOR_POINTING_HAND)
+	
 func center_buttons():
 	var button_group = get_node("ButtonGroup")
 	assert(button_group)

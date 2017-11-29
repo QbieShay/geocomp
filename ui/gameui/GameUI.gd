@@ -51,6 +51,7 @@ func init_spline_btn(type):
 	var btn = spline_button.instance()
 	btn.set_spline_type(type, normals[type-1], pressed[type-1] , cancels[type-1])
 	btn.gameui = self
+	btn.set_default_cursor_shape(CURSOR_POINTING_HAND)
 	container.add_child(btn)
 
 func position_spline(who, type):

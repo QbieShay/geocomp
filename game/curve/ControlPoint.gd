@@ -18,10 +18,13 @@ var type = PointType.KNOT
 var knot # The knot this Control Point belongs to (null if is itself a knot)
 var anchor_pos
 var drag_manager
+var enabled = true
 
 onready var initial_pos = get_global_pos()
 
 func _ready():
+	if !enabled:
+		return
 	set_process_input(true)
 	set_fixed_process(true)
 	var game = get_node(Utils.name_from_root('Level')).game

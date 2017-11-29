@@ -9,6 +9,7 @@ var point_radius = 10.0
 var curve_thickness = 4.0
 var curve_color = Color(1, 1, 1, 1)
 var point_color = Color(1, 1, 0.5, 1)
+var point_color_extern = Color(0.2, 0.9, 0.5)
 var point_in_color = Color(1, 0.5, 1, 1)
 var point_out_color = Color(0.5, 1, 1, 1)
 var draw_polygon = true
@@ -61,6 +62,8 @@ func init_with_points(n, width = 0):
 		control_points.append(cp)
 		cp.connect("position_changed", self, "on_position_change", [3 * i])
 		add_child(cp)
+		if i == 0 or i == n - 1:
+			cp.enabled = false
 		cp = ControlPointNode.instance()
 		cp.set_pos(pos + pos_in)
 		cp.type = ControlPoint.PointType.IN
@@ -76,7 +79,10 @@ func init_with_points(n, width = 0):
 		control_points.append(cp)
 		if i < n - 1:
 			cp.connect("position_changed", self, "on_position_change", [3 * i + 2])
-			add_child(cp)
+			add_child(cp)	
+		else:
+			# Extreme points don't move
+			cp.enabled = false
 	collider = BezierColliderNode.instance()
 	add_child(collider)
 	created = true
@@ -109,7 +115,11 @@ func _draw():
 			Utils.m_draw_line_p(self, p_out, p_in, polygon_color, polygon_thickness)
 		p_out = pos + curve.get_point_out(i)
 		
-		add_circle(pos, point_radius, point_color)
+		if i == 0 or i == curve.get_point_count() - 1:
+			add_circle(pos, point_radius, point_color_extern)
+		else:
+			add_circle(pos, point_radius, point_color)
+			
 		if i > 0:
 			add_circle(p_in, point_radius, point_in_color)
 			Utils.m_draw_line_p(self, pos, p_in, polygon_color, polygon_thickness)
