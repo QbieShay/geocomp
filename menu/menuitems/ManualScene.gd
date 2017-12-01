@@ -4,7 +4,7 @@ const ManualButton = preload('ManualButton.gd')
 
 func _ready():
 	var container = get_node("ButtonGroup/ButtonsContainer")
-	for i in range(5):
+	for i in range(8):
 		var btn = ManualButton.new()
 		btn.idx = i + 1
 		container.add_child(btn)
