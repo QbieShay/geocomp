@@ -30,6 +30,8 @@ func _fixed_process(delta):
 func _input(event):
 	if event.is_action_pressed("ui_start") and not started:
 		start_level()
+#	if event.type == InputEvent.MOUSE_BUTTON and event.button_index == BUTTON_RIGHT:
+#		win()
 
 func game_over(missed_targets):
 	if missed_targets == 0:

@@ -27,9 +27,10 @@ func _on_ResetButton_pressed():
 
 func _on_NextButton_pressed():
 	var lvl = get_node(Utils.name_from_root("Level"))
-	if(lvl.level_num >=5):
+	if lvl.level_num >= 5:
 		var scene_manager = get_tree().get_root().get_node("Root/SceneManager")
-		scene_manager.load_previous_scene()
+		scene_manager.set_main_scene("res://WinScene.tscn")
+#		scene_manager.load_previous_scene()
 	else:
 		lvl.load_level(lvl.level_num + 1)
 		
