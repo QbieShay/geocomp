@@ -50,8 +50,8 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[connection signal="mouse_enter" from="." to="." method="_hover"]
+[connection signal="mouse_enter" from="." to="." method="on_hover"]
 
-[connection signal="pressed" from="." to="." method="_click"]
+[connection signal="pressed" from="." to="." method="on_click"]
 
 

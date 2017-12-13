@@ -5,8 +5,10 @@ const Utils = preload('res://Utils.gd')
 onready var label = get_node('../../../Label')
 
 func _ready():
-	connect('pressed', self, 'on_click')
-	connect('mouse_enter', self, 'on_hover')
+	if !is_connected('pressed', self, 'on_click'):
+		connect('pressed', self, 'on_click')
+	if !is_connected('mouse_enter', self, 'on_hover'):
+		connect('mouse_enter', self, 'on_hover')
 	set_default_cursor_shape(CURSOR_POINTING_HAND)
 	
 func on_click():

@@ -12,7 +12,8 @@ var t = rand_range(0, 2 * PI)
 onready var sprite = get_node('Sprite')
 
 func _ready():
-	connect("body_enter", self, "on_body_enter")
+	if !is_connected('body_enter', self, 'on_body_enter'):
+		connect("body_enter", self, "on_body_enter")
 	set_process(true)
 	sprite.set_modulate(COLOR)
 	
